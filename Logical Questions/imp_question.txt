@@ -1,0 +1,436 @@
+1) What is JavaScript.
+	JavaScript is a programming language that is used for converting static web pages to interactive and dynamic web pages.
+	JavaScript is a lightweight, cross-platform, single-threaded, synchronous programming language.
+
+2) What is Nodejs. 
+	Nodejs is an open-source server-side javascript runtime environment built on Chrome's V8 javascript engine. It provides an event-driven,  non-blocking (asynchronous) I/O and cross-platform runtime environment for building highly scalable server-side applications using javascript.
+ 
+3) What is Cors.
+
+	Cross-origin resource sharing (CORS) is a security mechanism that allows web applications to access resources from other domains
+ 
+	CORS (Cross Origin Resource Sharing ) stands for cross origin resource sharing, it is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+	
+4) What is Middleware.
+	Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
+
+	Middleware functions can perform the following tasks:
+
+	Execute any code.
+	Make changes to the request and the response objects.
+	End the request-response cycle.
+	Call the next middleware function in the stack.
+
+	Middleware functions in Express are functions that have access to the request (req) and response (res) objects, as well as the next function. They are executed sequentially in the order they are defined and can perform various tasks such as modifying request or response objects, performing authentication, logging, error handling, and more.
+
+5) What is JWT.
+	A JSON web token(JWT) is JSON Object which is used to securely transfer information over the web(between two parties). It can be used for an authentication system and can also be used for information exchange.The token is mainly composed of header, payload, signature. These three parts are separated by dots(.)
+
+			1)  jwt.sign({   
+					data: 'foobar'
+				}, 'secret', { expiresIn: '1h' });
+
+			2) jwt.verify(token, 'shhhhh');		
+
+
+6) What is event loop.
+
+	An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
+	(इवेंट लूप एक ऐसी चीज़ है जो सामान को कतार से बाहर खींचती है और जब भी फ़ंक्शन स्टैक खाली हो जाता है तो उसे फ़ंक्शन निष्पादन स्टैक पर रख देती है।)
+
+	The event loop is a constantly running process that monitors both the callback queue and the call stack.  
+	If the call stack is empty, the event loop places the next function from the callback queue to the call stack. If the callback queue is empty, nothing will happen:
+
+
+7) What is Callback function.
+	A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. 
+
+	callbacks are the traditional way of handling asynchronous operations in Node.js  
+
+	function sum(total){
+		console.log("Total:  ", total)
+	}
+
+	function calculate(num1, num2, callback){
+		let total = num1 + num2;
+		callback(total);
+	}
+
+	calculate(10, 20, sum)
+
+
+8) What is Higher Order Function.
+
+	A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.
+
+		// Callback function, passed as a parameter in the higher order function
+		function callbackFunction(){
+			console.log('I am  a callback function');
+		}
+
+		// higher order function
+		function higherOrderFunction(func){
+			console.log('I am higher order function')
+			func()
+		}
+
+		higherOrderFunction(callbackFunction);
+
+
+9) What is Closure.
+	A closure is the combination of a function and the lexical environment within which the function was declared. it is an inner function that has access to outer functions variables, and global variables, and also access own scope variables.
+
+	function welcome (name){
+
+		function greeting(message){
+			console.log(message + ' ' + name)
+		}
+
+		retrun greeting;
+	} 
+
+	var myfunction = welcome('John')
+	myfunction('Hello');
+
+
+10) What Does "Single-Threaded" Mean?
+	Single-Threaded means the language can execute only one instruction at a time (which means that it can only execute one instruction at a time). This differs from multi-threaded programming languages that run multiple instructions at once.
+  
+11) What Does "Non-Blocking" Mean?
+	it means that the language does not wait for a specific previous instruction to finish executing before it moves to the next one. This ensures that no instruction blocks or obstructs the execution of subsequent instructions. 
+
+	Non-blocking Execution:
+		When you perform an asynchronous operation, like reading a file or making an HTTP request, Node.js doesn't wait for the operation to complete. Instead, it registers the operation with the event loop and continues to execute other code. When the operation is finished, the event loop triggers the associated callback.
+
+
+	"Non-Blocking I/O: To achieve concurrency and handle many operations simultaneously without blocking the main thread, Node.js uses non-blocking I/O operations. When Node.js performs I/O operations (e.g., reading from a file, making an HTTP request, or querying a database), it doesn't block the event loop. Instead, it initiates the operation and continues executing other code. When the I/O operation is complete, a callback is triggered to handle the result."
+	
+12) What Does "Asynchronous" Mean?
+		JavaScript is also asynchronous (async), which means that it can handle a large number of(multiple) tasks at a time. This is a feature of multi-threaded programming languages, but JavaScript achieves it with a single thread.
+
+		"Asynchronous code allows you to perform multiple tasks concurrently without waiting for each one to complete before moving on to the next."
+
+
+13) What is NPM.
+	npm stands for Node Package Manager. npm provides the following two main functionalities:
+	
+	Online repositories for Node.js packages/modules which are searchable on search.nodejs.org
+	Command-line utility to install packages, do version management and dependency management of Node.js packages.
+	Another important use for npm is dependency management. When you have a node project with a package.json file, you can run npm install from the project root and npm will install all the dependencies listed in the package.json.
+
+14) What is package.js.
+
+	The package.json file in nodejs is the heart of the entire application. It is basically the manifest file that contains the metadata of the project where we define the properties of a package.
+
+15) What is Module in nodejs.
+	A module is a piece of reusable JavaScript code. It could be a .js file or a directory containing .js files. You can export the content of these files and use them in other files.
+
+
+16) What are datatypes in javascript.
+		There are 5  primitive types of data types in javascript
+		1) number 2) string 3) boolean 4) null 5) undefined 6) bigint 7) object
+
+17) What is hoisting in javascript.
+	Hoisting is the default behavior of javascript where variables and function declarations are moved to the top of the scope   (moving all the declarations at the top of the scope) before code execution.
+	Remember that javascript only hoists declarations, not initilization.
+
+	
+18) What do you mean by Asynchronous API?
+  
+    All APIs of Node.js library are aynchronous that is non-blocking. It essentially means a Node.js based server never waits for a API to return data. Server moves to next API after calling it and a notification mechanism of Events of Node.js helps server to get response from the previous API call. 	 
+
+    Note: Blocking methods execute synchronously and non-blocking methods execute asynchronously.
+
+	JavaScript is a single-threaded programming language. This means that the JavaScript engine has only one call stack. Therefore, it only can do one thing at a time.
+
+	When executing a script, the JavaScript engine executes code from top to bottom, line by line. In other words, it is synchronous.
+
+	Asynchronous means the JavaScript engine can execute other tasks while waiting for another task to be completed. For example, the JavaScript engine can:	
+
+
+19) What is Authentication & Authorization.
+
+	Authentication:	Authentication is all about proving who you are to the system. It is the process of validating a user's identity. It  could be a user, a login, or a session. The system checks if the person is genuinely who they claim to be. This is often done using a username and password, but it could also involve more advanced methods like biometric scans or two-factor authentication.
+	
+	Imagine logging into a website. You enter your username and password, and the website checks if they match what it has on record. If it's a match, you're authenticated. You've successfully proved your identity to the system.
+
+	Authorization : After the system knows who you are (thanks to authentication), it needs to know what you can do within it. This is where authorization comes into play. Authorization is all about permissions - it determines what actions you can take or what resources you can access in the system.
+
+	Think about using a computer where you're not the admin. You can do some things (like creating a document), but not others (like installing new software). That's an example of authorization at work.
+
+
+20) What is async/await.
+
+	async/await is a keyword in javascript/ nodejs. 
+	which is used to makes asynchronous code looks like its synchronous. This has only been possible because of the reintroduction
+	of promises into nodejs. Async-Await only works with functions that return a promise. 
+
+
+21) What is callback hell.
+
+		The Callback hell contains nested callbacks. Here, every callback takes an argument that is a result of the previous callbacks, In this way the code structure 
+		looks like a pyramid, making it difficult to read and maintain. Also, if there is an error in one function, then all other functions get affected.
+
+22) Node.js is single threaded then how it handles concurrency
+	Node js is  the asynchronous nature that makes it possible to handle concurrency and perform multiple I/O operations at the same time. Node js uses an event loop to maintain concurrency and perform non-blocking I/O operations.		
+	 
+23) What is setTimeout, setInterval, setImmediate.
+
+	The setTimeout() method is used to call a function after a specified time 
+
+	setTimeout(function(){
+		console.log('Good morning')
+	}, 2000)
+
+
+	The setInterval() method is used to call a function at a specified intevals 
+
+	setInterval(function(){
+		console.log('Good morning')
+	}, 2000)
+
+
+24)	What is Promise.
+		The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+		A Promise is in one of these states:
+
+		pending: initial state, neither fulfilled nor rejected.
+		fulfilled: meaning that the operation was completed successfully.
+		rejected: meaning that the operation failed.
+
+		"A Promise is a fundamental JavaScript object used to manage asynchronous operations and handle their results in a more structured and manageable way. Promises provide a way to work with asynchronous code that's more readable and easier to reason about compared to traditional callback-based approaches"
+
+
+25)	What is Destructure in js.
+		Destructuring is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables. That is, we can extract data from arrays and objects and assign them to variables.
+
+		let person = {name: "Sarah", country: "Nigeria", job: "Developer"};
+
+		let {name, country, job} =    ;
+
+		let [firstname, lastname] = ["Homepage", "Infotech"];
+
+	
+
+
+26)  what is call(), bind(), apply() in javascript
+
+	call() : The call() method allows you to call a function with a specified "this" value and arguments provided individually. 
+	The syntax is function.call(thisArg, arg1, arg2, ...). Here's an example
+
+	We passing the arguments individually in call()
+
+		function greet(name) {
+			console.log(`Hello, ${name}! I'm ${this.title}`);
+		}
+
+		const person = {
+			title: "Mr.",
+		};
+
+		greet.call(person, "John");
+
+	The apply() method allows you to call a function with a specified "this" value and arguments provided as an array. 
+	The syntax is function.apply(thisArg, [arg1, arg2, ...]). Here's an example:
+
+	We passing the arguments into array in apply()   
+
+		function introduce(name, age) {
+			console.log(`Hi, I'm ${name} and I'm ${age} years old.`);
+		}
+
+		const personInfo = {
+			name: "Alice",
+			age: 30,
+		};
+
+		introduce.apply(personInfo, ["Alice", 30]);
+
+	The bind() method returns a new function with a specified "this" value and initial arguments. This new function can be called later. 
+	The syntax is function.bind(thisArg, arg1, arg2, ...). Here's an example:
+
+	Create a copy of the function which can be call later
+	
+	function saySomething(message) {
+		console.log(`${this.name} says: ${message}`);
+	}
+
+	const person1 = {
+		name: "Alex",
+	};
+
+	const person2 = {
+		name: "Ella",
+	};
+
+	const saySomethingPerson1 = saySomething.bind(person1);
+	const saySomethingPerson2 = saySomething.bind(person2);
+
+	saySomethingPerson1("Hello!");
+	saySomethingPerson2("Hi there!");
+
+
+27) What is app.use() in nodejs
+	The app.use() method is used to configure middleware functions within your application.
+
+	The app.use() method is used to add middleware functions to the Express application's processing pipeline
+
+	Middleware functions in Express are functions that have access to the request (req) and response (res) objects, as well as the next function. They are executed sequentially in the order they are defined and can perform various tasks such as modifying request or response objects, performing authentication, logging, error handling, and more.
+
+
+28)  What is Sequelize.
+		Sequelize is a popular Object-Relational Mapping (ORM) library for Node.js that provides an abstraction layer for working with relational databases. It simplifies the interaction between your JavaScript code and databases like MySQL, PostgreSQL, SQLite, and others by allowing you to define your database models and relationships in JavaScript code rather than writing raw SQL queries.
+
+29) What is rest parameter defination and example in js	
+		In JavaScript, the rest parameter is a feature that allows you to represent an indefinite number of arguments as an array. It is denoted by an ellipsis (...) followed by a parameter name in a function declaration. This parameter collects all the remaining arguments that are not explicitly listed as separate parameters, and packs them into an array.
+
+		 the rest parameter (...numbers) collects all arguments into an array.
+
+			function sumNumbers(...numbers) {
+				let sum = 0;
+				for (let number of numbers) {
+					sum += number;
+				}
+				return sum;
+			}
+
+			console.log(sumNumbers(1, 2, 3)); // Output: 6
+			console.log(sumNumbers(4, 5, 6, 7)); // Output: 22
+
+
+30) What is spread operator defination and example in js
+
+		In JavaScript, the spread operator is used to expand elements from an iterable (like an array, string, or object) into places where multiple elements are expected, such as function arguments, array literals, or object literals. It is denoted by three consecutive dots (...).
+
+		1. Copying Arrays:
+
+			const originalArray = [1, 2, 3];
+			const copiedArray = [...originalArray];
+			console.log(copiedArray); // Output: [1, 2, 3]
+
+		2. Passing Array Elements to Function:
+
+			function sumNumbers(a, b, c) {
+				return a + b + c;
+			}
+
+			const numbers = [1, 2, 3];
+			const result = sumNumbers(...numbers);
+			console.log(result); // Output: 6
+
+31) What is an API
+	An API(Application Programming Interface ) is a middleware that communicates between software programs. An API is used to communicate between the client and the database server in an application.
+
+
+	What is node_modules.
+	What is eventEmitter.
+7)  Write query for get count of duplicate name.
+8)  How to upload media in nodejs.
+12) What is process and thread in nodejs
+23) What is Transaction in sql
+24) OOPS Concept, constructor
+25) What is slice and splice in js
+26) What is synchronous nad asynchronous
+27) What is blocking, non-bloking in nodejs
+28) What is single-threaded, Why nodejs is single-threaded
+32) What is fs, os, http, multer module in nodejs
+ 
+
+
+36) How Does Node.js Work?
+	There are three main components we must understand to see how Node.js works. These components are:
+		1) V8 Engine
+		2) Libuv
+		3) Event Loop
+
+    What is the V8 Engine?
+		The V8 Engine is the JavaScript engine that interprets and runs JavaScript code in the Chrome browser. Some other browsers use a different engine, for example, Firefox uses SpiderMonkey, and Safari uses JavaScriptCore. Without the JavaScript engine, a computer can not understand JavaScript.
+
+		The V8 engine contains a memory heap and call stack. They are the building blocks for the V8 engine. They help manage the execution of JavaScript code.
+
+		The memory heap is the data store of the V8 engine. Whenever we create a variable that holds an object or function in JavaScript, the engine saves that value in the memory heap. To keep things simple, it is similar to a backpack that stores supplies for a hiker.
+
+		Whenever the engine is executing code and comes across any of those variables, it looks up the actual value from the memory heap – just like whenever a hiker is feeling cold and wants to start a fire, they can look into their backpack for a lighter.
+
+		There is a lot more depth to understanding the memory heap. Memory management in JavaScript is a topic that takes more time to explain because the real process is highly intricate. To learn more about the memory heap, check out this resource.
+
+		The call stack is another building block in the V8 engine. It is a data structure that manages the order of functions to be executed. Whenever the program invokes a function, the function is placed on the call stack and can only leave the stack when the engine has handled that function.
+
+		JavaScript is a single-threaded language, which means that it can only execute one instruction at a time. Since the call stack contains the order of instructions to be executed, it means that the JavaScript engine has just one order, one call stack.
+		
+	What is Libuv?
+		Libuv is a multi-platform support Library with a focus on asynchronous I/O.
+		
+		This means that Libuv is cross-platform (can run on any operating system) and has a focus on Asynchronous I/O.
+
+		The computer tends to take time to process I/O instructions, but Libuv—the library Node.js uses to interface with the computer— is focused on Asynchronous I/O. It can handle more than one I/O operation at once.
+
+		This is what makes Node.js process I/O instructions efficiently despite being single-threaded. It is all because of Libuv. Libuv knows how to handle requests asynchronously, thereby minimizing delay. But how exactly does the JavaScript engine make use of Libuv?
+
+		Whenever we pass a script to Node.js, the engine parses the code and starts processing it. The call stack holds the invoked functions and keeps track of the program. If the V8 engine comes across an I/O operation, it passes that operation over to Libuv. Libuv then executes the I/O operation.
+
+		Note that Libuv is a C Library. How do we use JavaScript code to run C instructions? There are bindings that connect JavaScript functions to their actual implementation in Libuv. These bindings make it possible to use JavaScript code for I/O instructions.
+
+		Node.js uses Libuv for the actual implementation but exposes Application Programming Interfaces (APIs). So, we can now use a Node.js API (which looks like a JavaScript function) to initiate an I/O operation.
+
+		One interesting thing to note is that it is true that JavaScript is a single-threaded language, but Libuv—the low-level library Node.js uses— can make use of a thread pool (multiple threads) when executing instructions in the operating system.
+
+		Now, you don’t have to worry about these threads when using Node.js. Libuv knows how to manage them effectively. You just have to make use of the provided Node.js APIs to write the instructions.
+	
+	
+	What is an Event Loop?
+	
+		The Event Loop in Node.js is a very important part of the process. From the name, we can see it is a loop. The loop starts running as Node.js begins executing a program. In this section, we'll examine what the event loop does.
+
+		When we run our JavaScript program that contains some asynchronous code (like I/O instructions or timer-based actions), Node.js handles them using the Node.js APIs. Asynchronous functions usually have instructions to be executed after the function has finished processing. Those instructions are placed in a Callback Queue.
+
+		The Callback Queue works with the First In First Out (FIFO) approach. That means the first instruction (callback) to enter the queue is the first to be invoked.
+
+		As the event loop runs, it checks if the call stack is empty. If the call stack is not empty, it allows the ongoing process to continue. But if the call stack is empty, it sends the first instruction on the callback queue to the JavaScript engine. The engine then places that instruction (function) on the call stack and executes it. This is very similar to how the event loop works in the browser.
+
+		So, the event loop executes callbacks from asynchronous instructions using the JavaScript V8 engine in Node.js. And it is a loop, which means every time it runs, it checks the call stack to know if it will remove the foremost callback and send it to the JavaScript engine.
+		
+		Node.js is said to have an event-driven architecture. This means Node.js is built around listening to events and reacting to them promptly when they happen. These events can be timer events, network events, and so on.
+
+		Node.js responds to those events by using an event loop to load event callbacks to the engine after something triggers an event. It is for this reason that Node.js is excellent for real-time data transfer in applications.
+
+
+
+
+
+
+
+Parts of Node.js
+1. Modules
+2. Console
+3. Cluster
+4. Global
+5. Error Handling
+6. Streaming
+7. Buffer
+8. Domain
+9. DNS
+10.Debugger
+
+
+Event Loop => The event loop is the machanism that processes callbacks and handles asynchronous operations like I/O, network request, timers and manage other tasks without blocking the main thread.
+
+
+Global Object => __dirname, __filename, exports, module, require
+
+Error in nodejs are handled through exceptions.
+
+Streams are the objects that let you read data or write data continuously. There are four types of streams:
+
+Readable: These are the types of streams from which data can be read
+Writable: These are the types of streams to which data can be written
+Duplex: These are both readable and writable streams
+Transform: Streams that can manipulate the data while it is being read or written
+
+
+Buffer is a module that allows the handling of streams that contain only binary data. An empty buffer of length '10' can be created by this method
+
+DNS module is used to connect to a DNS server and perform name resolution by using the following method: dns.resolve()
+
+DNS module is also used for performing name resolution without a network communication by following method: dns.lookup()

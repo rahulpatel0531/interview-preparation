@@ -1,0 +1,13 @@
+
+What is SQL?
+	SQL stands for Structured Query Language.It is used for managing data in relational database management system which stores data in the form of tables.
+	
+		Data manipulation : The Data Manipulation Language (DML) is the subset of SQL which is used to add, update and delete data.
+		
+		Data definition : The Data Definition Language (DDL) is used to manage table and index structure. CREATE, ALTER, RENAME, DROP and TRUNCATE statements are to name a few data definition elements.
+		
+		Data control : The Data Control Language (DCL) is used to set permissions to users and groups of users whether they can access and manipulate data.
+
+		Transaction : A transaction contains a number of SQL statements. After the transaction begins, all of the SQL statements are executed and at the end of the transaction, permanent changes are made in the associated tables.
+		
+		Procedure : Using a stored procedure, a method is created which contains source code for performing repetitive tasks

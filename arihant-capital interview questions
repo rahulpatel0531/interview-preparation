@@ -1,0 +1,100 @@
+1. What is nodejs, how it work behind the scene?
+2. What is promise and exapin its method
+3. How to use access and generate token?
+4.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const str = "Today is thursday and tuesday";
+
+function replaceChar(str, char, replaceChar) {
+  let replaceStr = '';
+  
+
+  for(let i = 0; i < str.length; i++){
+    
+    if(char.length > 1){
+      
+      retrun str.replace()
+      
+    }
+    
+    // if(str[i] == char){
+    //   replaceStr += replaceChar
+    // }else{
+    //   replaceStr += str[i];
+    // }
+  }
+  
+  return replaceStr;
+}
+
+
+console.log(replaceChar(str, 'day', 'r'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//1. implement a function called promise merge that can take n number of promises.
+// consditon : given 
+
+// promise types : string, number, and boolen, array and Object
+
+// consdition:  if  all promise as string then concate and if all promise is number then sum it and if  type mismatch should Error
+
+
+
+function promiseMerge(...n) {
+return new Promise((resolve, reject) => {
+   let p =  Promise.all(n)
+   let checkAllTypeMatch = false;
+
+  p.then((res) => {
+    let  response = null;
+    console.log('res', res)
+    let newStr = '';
+    let type;
+    
+    res.forEach((ele, index) => {
+      if(index == 0){
+        type= typeof ele
+      }
+      
+      if(type != typeof ele) {
+        throw new Error('Promise type mismatch');
+      }
+      
+    })
+    
+    if(type == 'string'){
+      
+    }else 
+    
+      resolve(response)
+    })
+  .catch((err) => {
+    reject(err) 
+  })
+  
+})
+ 
+}
+
+ console.log( promiseMerge(Promise.resolve('rahul'), Promise.resolve('patel')));
+console.log( promiseMerge(Promise.resolve('rahul'), Promise.resolve('patel'), Promise.resolve(true) ));
+

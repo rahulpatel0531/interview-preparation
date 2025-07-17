@@ -1,0 +1,43 @@
+
+
+const obj = {a:1, b: 2, c: 3};
+
+// console.log(Object.keys(obj))
+
+// console.log(Object.values(obj))
+
+// console.log(Object.entries(obj))
+
+// console.log(Object.isSealed(obj));
+
+const target = {a:1, b:3}
+const source = {b:4, c:3}
+const source2 = {d:5, e:6}
+
+// console.log(Object.assign(target, source, source2))
+
+Object.freeze(obj);
+
+obj.a = "hello";
+obj.d = 5;
+
+// console.log(obj)
+
+
+const names = {name:"hello"}
+Object.seal(names)
+
+names.name = 'Hiiii';
+names.age = 25;
+
+console.log(names)
+
+
+const entries = [['name', 'Rock'], ['age', 35]];
+const obj1 = Object.fromEntries(entries);
+console.log(obj1)
+
+
+console.log(Object.is('foo', 'foo'))
+console.log(Object.is({}, {}))
+

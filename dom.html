@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parentDiv">This is parent</div>
+
+    <script>
+        let createDiv = document.createElement('span')
+        createDiv.textContent = "This is span tag";
+        createDiv.style.setProperty('color', 'red')
+        document.body.appendChild(createDiv)
+
+        let existingEle = document.getElementById('parentDiv');
+        let clonedEle = existingEle.cloneNode(true);
+        clonedEle.textContent = 'Child using clone'
+        clonedEle.style.setProperty('color', 'blue')
+        document.body.appendChild(clonedEle)
+    </script>
+
+</body>
+
+</html>

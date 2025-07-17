@@ -1,0 +1,64 @@
+
+
+================= SQL Challenges ================= 
+
+1. From the following tables, write a SQL query to find the information on each salesperson of ABC Company. 
+   Return name, city, country and state of each salesperson.
+
+	SELECT first_name, last_name, city, state  FROM public.salespersons 
+	LEFT JOIN address ON address.salesperson_id = salespersons.salesperson_id
+
+
+2. From the following table, write a SQL query to find the third or second highest sale. Return sale amount.
+
+
+	SELECT sale_amt as secondHighestSale 
+	FROM salemast
+	ORDER BY sale_amt DESC
+	LIMIT 1 OFFSET 1
+
+	SELECT MAX(sale_amt) AS SecondHighestSale
+	FROM (SELECT DISTINCT sale_amt
+	FROM salemast ORDER BY sale_amt DESC LIMIT 2 offset 1) AS sale;
+
+	SELECT MAX(sale_amt) AS SecondHighestSale
+	FROM salemast
+	WHERE sale_amt<(SELECT MAX(sale_amt) FROM salemast);
+
+3. From the following table, write a SQL query to find the marks, which appear at least thrice one after another without interruption. Return the number.
+
+	SELECT DISTINCT L1.marks as ConsecutiveMarks 
+	FROM logs as L1, logs as L2, logs as L3
+	WHERE L1.student_id = L2.student_id+1
+	AND L1.student_id = L3.student_id+2
+	AND L1.marks = L2.marks AND L1.marks=L3.marks
+	
+
+4. From the following table, write a SQL query to find all the duplicate emails (no upper case letters) of the employees. Return email id.
+		
+	SELECT email_id FROM employees 
+    GROUP BY email_id 
+    HAVING COUNT(email_id) > 1
+	
+	SELECT DISTINCT e1.email_id FROM employees e1
+	JOIN employees e2 ON e1.email_id = e2.email_id
+	WHERE e1.employee_id != e2.employee_id
+
+
+	SELECT DISTINCT e1.email_id FROM employees e1
+	WHERE EXISTS(select * FROM employees e2 
+				 WHERE e1.email_id = e2.email_id 
+				 AND e1.employee_id != e2.employee_id)
+				 
+	
+	
+	SELECT email_id 
+	FROM (SELECT email_id, COUNT(email_id) as nuOfAppearence
+						 FROM employees GROUP BY email_id ) as countEmail
+	WHERE nuOfAppearence > 	1
+	
+	
+6. From the following tables, write a SQL query to find those customers who never ordered anything. 
+   Return customer name.	
+   
+   

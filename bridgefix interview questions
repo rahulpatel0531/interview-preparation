@@ -1,0 +1,45 @@
+
+
+1. role and responsibility
+2. middleware, and use
+3. bult in module in nodejs
+4. stream, buffer, cluster, file-system, multer
+5. synchronous and asynchronous
+6. 
+
+
+
+let str = "world hello" // output "hello world"
+
+console.log(reverseString(str));
+
+
+function reverseString(str) {
+    
+    let words = [];
+    let word = "";
+    
+    for(let i = 0; i < str.length; i++){
+        if(str[i] !== " "){
+            word += str[i];
+        }else{
+            if(word.length > 0) {
+                words.push(word);
+                word = "";
+            }
+        }
+    }
+    
+    if(word.length > 0) {
+        words.push(word); 
+        word = "";
+    }
+    
+    let result = "";
+    for(let i = words.length - 1; i >= 0; i--){
+        result += words[i];
+        if(i !== 0) 
+        result += " ";
+    }
+    return result
+}

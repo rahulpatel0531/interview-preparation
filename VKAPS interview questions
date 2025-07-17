@@ -1,0 +1,70 @@
+1. Write a function in nodejs which takes a string and return a reverse string.
+
+function reverseString(str) {
+  return str.split(''). reverse().join('');
+}
+
+console.log(reverseString("hello"));  // Output: "olleh"
+
+2. Write a function in nodejs which take an array of number and return the sum of all even number.
+
+    function sumOfEvenNumbers(arr) {
+        return arr.filter(num => num % 2 === 0).reduce((sum, num) => sum + num, 0);
+    }
+    
+    console.log(sumOfEvenNumbers([1, 2, 3, 4, 5, 6]));  // Output: 12
+  
+3. Write a function in nodejs which take a number and retrun an nth number of fibonacci series.
+
+    function fibonacci(n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    
+    console.log(fibonacci(5));  // Output: 5
+  
+4. what is readline in nodejs why we use it. explain with example.
+
+    The readline module in Node.js allows reading input from the console. It is useful when you need user input from the terminal
+
+    const readline = require('readline');
+
+    const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+    });
+
+    rl.question('What is your name? ', (name) => {
+    console.log(`Hello, ${name}!`);
+    rl.close();
+    });
+
+    readline.createInterface() sets up an interface for reading input and output through the terminal.
+    rl.question() asks the user for input and provides a callback to handle the response
+
+5. what is stream in nodejs why we use it. and exaplain with an example.
+
+  `Streams in Node.js are objects that allow reading or writing data continuously. They are useful for handling large amounts of data efficiently.`
+
+    const fs = require('fs');
+
+    const readStream = fs.createReadStream('example.txt', 'utf8');
+
+    readStream.on('data', (chunk) => {
+    console.log('Chunk received:', chunk);
+    });
+
+    readStream.on('end', () => {
+    console.log('No more data.');
+    });
+
+    Streams make it easier to handle large files without loading everything into memory at once.
+
+
+
+
+
+
+
+
+

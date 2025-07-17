@@ -1,0 +1,65 @@
+1) What is nodejs stream ?
+    Answer : Streams are objects that let you read data from a source or write data to a destination in continuous fashion.In Node.js, there are four types of streams.
+
+        Readable - Stream which is used for read operation.
+        Writable - Stream which is used for write operation.
+        Duplex - Stream which can be used for both read and write operation.
+        Transform - A type of duplex stream where the output is computed based on input.
+
+
+
+2) Why use promise instead of callback ?
+    3) What is thread pool ?
+
+
+
+
+        4) What is event loop ?
+            Event Loop: An event loop  manage the execution of callbacks and events.where callbacks are executed when the appropriate events occur.
+
+
+5) What is first class function in javascript ?
+    First - class functions:=> when functions in that language are treated like any other variable.For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+
+    Assigning a function to a variable:
+const foo = () => {
+    console.log("foobar");
+};
+foo();
+
+    Passing a function as an argument
+function sayHello() {
+    return "Hello, ";
+}
+
+function greeting(helloMessage, name) {
+    console.log(helloMessage() + name);
+}
+
+// Pass `sayHello` as an argument to `greeting` function
+greeting(sayHello, "JavaScript!");
+    // Hello, JavaScript!
+
+
+    Returning a function
+    function sayHello() {
+    return () => {
+        console.log("Hello!");
+    };
+}
+
+
+6)Is Nodejs a single threaded application ?
+    ANS : Yes! Nodejs uses a single threaded model with event looping.
+
+
+    7): What are the core modules of Node, js ?
+    1) Http
+2) fs
+3) path
+4) process
+5) os
+6) url, EventEmitter, Stream, Global Objects
+
+
+    JavaScript engine(a program that converts Javascript code into lower level or machine code that microprocessors can understand)

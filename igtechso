@@ -1,0 +1,10 @@
+https://codesandbox.io/p/devbox/node-js-test-forked-vrp7fr
+
+Node.js test
+Below is the instructions for the test
+
+Create a middleware in /login post request
+Send email and password in this request
+In middleware check if email value is equal to test@gmail.com and password is equal to 123456
+If validation is passed in middleware send Authentication successful! otherwise send failed
+https://vrp7fr-8181.csb.app/

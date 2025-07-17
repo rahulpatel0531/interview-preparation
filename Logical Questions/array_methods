@@ -1,0 +1,35 @@
+
+1.  filter
+2.  map
+3.  reduce
+4.  slice
+5.  splice
+6.  foreach
+7.  indexOf
+8.  startWith
+9.  includes
+10. concat
+11. find
+12. findIndex
+13. findLast
+14. findLastIndex
+15. join
+16. keys
+17. lastIndexOf
+18. pop
+19. push
+20. revrese
+21. sort
+22. values
+23. length
+24. shift
+25. unshift
+26. at
+27. from
+28. isArray
+29. of
+29. entries
+30. every
+31. some
+32. flat, flatMap
+33. fill

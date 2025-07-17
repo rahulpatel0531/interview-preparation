@@ -1,0 +1,309 @@
+
+
+=================== React Docs ===================  
+
+1. Create react app command  "npx create-react-app counter"
+
+2. Export the components 
+
+	"The 'export default' prefix is a standard JavaScript syntax (not specific to React). It lets you mark the main function in a file so that you can later import it from; other files."
+	
+3. components: React lets you create components, reusable UI elements for your app.
+	
+4. " A file can only have one default export, but it can have numerous named exports!"
+ 
+5. JSX: JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file
+
+JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place.
+	
+6. <> and </>  Fragment : This empty tag is called a Fragment 
+
+7. Props: Props are the information that you pass to a JSX tag. For example, className, src, alt, width, and height are some of the props you can pass to an <img>:
+
+8. Event handlers : Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs, and so on.
+
+9. e.stopPropagation() stops the event handlers attached to the tags above from firing.
+   e.preventDefault() prevents the default browser behavior for the few events that have it
+   
+10. State: In React, this kind of component-specific memory is called state.   
+
+11. A state variable is only necessary to keep information between re-renders of a component. Within a single event handler, a regular variable will do fine. Don’t introduce state variables when a regular variable works well.
+
+
+==================== react router =====================
+
+A <BrowserRouter> stores the current location in the browser's address bar using clean URLs and navigates using the browser's built-in history stack.
+
+
+npm install  formik
+
+npm install yup
+
+
+=============
+
+What is Axios?
+Axios is an HTTP client library that allows you to make requests to a given endpoint:
+
+
+=========== Hooks =============
+
+Hooks allow us to "hook" into React features such as state and lifecycle methods.
+
+
+The state is an object that holds information about a certain component.
+
+
+The correct way of reading state after the update would be using the useEffect hook. It lets us execute a function after every component re-render (by default) or after any particular variable where we declare changes.
+
+
+UseEffect allows you to run a side effect on your component. Side effect basically means something that happens after some other specific thing happens.
+
+  useEffect(() => { fetchData() }, [])
+  
+  
+UseContext hook
+
+  The context API solves this situation by providing "a place" to store state that needs to be consumed from many different parts of our application, and along different levels of the component tree.
+  
+
+UseReducer hook  
+  
+A reducer is a pure function that takes the previous state and an action as an argument, and returns the next state. It's called a reducer because it's the same function type you could pass to an array: Array.prototype.reduce(reducer, initialValue) 
+
+
+useReducer is the hook Reacts provides that lets us implement reducers to manage our state.
+
+import { useReducer } from 'react'
+
+
+const [state, dispatch] = useReducer(reducer, { count: 0 }) 
+
+<button onClick={() => dispatch({type: 'ADD'})}>Add 1</button>
+
+
+
+UseRef hook
+
+The useRef hook is a function that returns a mutable ref object whose .current property is initialized with the passed argument (initialValue). The returned object will persist for the full lifetime of the component.
+
+There are two main uses of useRef: Keeping track of a mutable variable through re-renders, and accessing the DOM nodes or React elements.
+ 
+
+
+React JSX helps us to write HTML in JavaScript. With the help of JSX, we have directly written the HTML syntax in JavaScript.
+
+	example: const ele = <h1>This is sample JSX</h1>;
+	
+	
+Virtual DOM  which is like a lightweight copy of the actual DOM(a virtual representation of the DOM).	
+Virtual DOM is the virtual representation of Real DOM.
+
+ReactDom is a core react package that provides methods to interact with the Document Object Model or DOM. This package allows developers to access and modify the DOM
+	
+The ReactDOM in React is responsible for rendering the elements or Components in the actual DOM of the web page
+
+
+
+
+
+
+	React is a JavaScript library that allows developers to build user interfaces (UIs) for web and mobile applications.
+
+	Component: a component is a reusable piece of code that defines a specific part of a user interface (UI). 
+	
+	JSX : JSX (JavaScript Syntax Extension) is a JavaScript extension that allows developers to write HTML-like code in JavaScript files to describe React's object tree.
+	
+	Hooks are functions in React that allow developers to access React features from within function components
+	
+	Higher-order component: a higher-order component is a function that takes a component and returns a new component.
+	
+	
+	
+	=================== Lifecycle method=========================
+	
+	lifecycle of a component can be defined as the series of methods that are invoked in different stages of the component’s existence. React automatically calls these methods at different points in a component’s life cycle
+
+	The three phases are: Mounting, Updating, and Unmounting.
+
+	Mounting means putting elements into the DOM.
+	Updating means when a component is updated.
+	Unmounting means when a component is removed from the DOM, or unmounting as React likes to call it.
+
+
+	
+	1. constructor
+	2. componentDidMount:  The componentDidMount() method is called after the component is rendered.
+	3. render: The render() method is required and will always be called
+	4. componentDidUpdate : The componentDidUpdate method is called after the component is updated in the DOM.
+	5. componentWillUnMount: The componentWillUnmount method is called when the component is about to be removed from the DOM.
+
+
+	
+	
+	Props: Props are arguments passed into React components.
+	
+	
+==================== React Hooks ========================
+
+
+1. State : The state is a built-in React object that is used to contain data or information about the component.
+
+2. useState: useState is a React Hook that lets you add a state variable to your component
+	const [state, setState] = useState(initialState)
+
+3. useEffect: useEffect is a hook that allows you to perform side effects in your components
+	useEffect(setup, dependencies?)
+	
+4. useContext: useContext is a React hook that provides a way to share data (context) across multiple components without explicitly passing it through props.
+	
+	const value = useContext(SomeContext)
+
+
+5. useCallback: useCallback is a powerful React hook that helps you optimize your application by preventing unnecessary re-renders.
+	
+	useCallback is a React Hook that lets you cache a function definition between re-renders.
+	
+	const cachedFn = useCallback(fn, dependencies)
+	
+6. useReducer:  useReducer is a React Hook that lets you add a reducer to your component.
+
+				useReducer is another React Hook that is used for managing state, especially when the state logic is more complex.
+				
+				const [state, dispatch] = useReducer(reducer, initialArg, init?)
+
+
+7. useRef: useRef is a React Hook that lets you reference a value that’s not needed for rendering.
+			we can pass reference to a value that is not needed for rendering.
+	const ref = useRef(initialValue)
+
+8. useMemo: useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+	const cachedValue = useMemo(calculateValue, dependencies)
+	
+	
+	ReactDom is a core react package that provides methods to interact with the Document Object Model or DOM. This package allows developers to access and modify the DOM
+	
+	The ReactDOM in React is responsible for rendering the elements or Components in the actual DOM of the web page. It is a package in React that provides
+	DOM-specific methods that can be used at the top level of a web app to enable an efficient way of managing DOM elements of the web page.
+
+
+What is React:
+
+React is a JavaScript library used for building user interfaces, particularly single-page applications. It allows you to build complex UIs from isolated pieces of code called "components."
+
+
+Difference Between State and Props:
+
+state: Holds data that can change over time and is managed within the component.
+props: Data passed to a component from its parent. Props are read-only and cannot be changed by the component.
+
+
+What is Prop Drilling:
+
+Prop drilling is the process of passing data from a parent component to deeply nested child components through multiple levels of components, even if intermediate components don’t need the data.
+
+
+What is useContext:
+
+useContext is a React hook that allows components to consume values from a context without prop drilling.
+
+
+What is Redux:
+
+Redux is a state management library for JavaScript apps. It helps manage application state in a predictable way by using a single source of truth (a store) and allows components to connect to the state.
+
+
+What is Polyfill:
+
+A polyfill is code that provides modern functionality in older browsers that don’t natively support it.
+
+
+
+Difference Between Element and Component:
+
+Element: A plain object describing what to render, e.g., <div>.
+Component: A class or function that can render elements, e.g., function App() { return <div />; }.
+
+
+What is Virtual DOM:
+
+The virtual DOM is a lightweight representation of the real DOM. React uses it to track changes in the UI efficiently and only update the changed parts of the actual DOM.
+
+
+Prototyping in JavaScript:
+
+Prototyping allows objects to inherit properties and methods. Every JavaScript object has a prototype, and objects inherit from their prototypes.
+
+	function Animal(name) {
+	this.name = name;
+	}
+	Animal.prototype.speak = function() {
+	console.log(this.name + ' makes a sound.');
+	};
+	const dog = new Animal('Dog');
+	dog.speak(); // Dog makes a sound.
+
+
+
+map, filter, reduce
+map: Returns a new array by applying a function to every element.
+filter: Returns a new array with elements that pass a condition.
+reduce: Reduces the array to a single value.
+
+const arr = [1, 2, 3, 4];
+const doubled = arr.map(x => x * 2);  // [2, 4, 6, 8]
+const even = arr.filter(x => x % 2 === 0);  // [2, 4]
+const sum = arr.reduce((acc, x) => acc + x, 0);  // 10
+
+
+Using Polyfill for map:
+
+Polyfill provides a custom implementation for browsers that don’t support map
+
+Array.prototype.myMap = function(callback) {
+  let newArray = [];
+  for (let i = 0; i < this.length; i++) {
+    newArray.push(callback(this[i], i, this));
+  }
+  return newArray;
+};
+
+let polyfillResult = a.myMap((num) => num * 2);
+console.log(polyfillResult); // [2, 4, 6, 8, 10]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+
+
+
+
+
+
+
+
+   
+   

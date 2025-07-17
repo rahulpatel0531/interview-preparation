@@ -1,0 +1,83 @@
+Q1: What is an SQL trigger?
+
+    An SQL trigger is a database object that is associated with a table and automatically executes a set of SQL statements when a specific event occurs on that table. Triggers are used to enforce business rules, maintain data integrity, and automate certain actions within a database. They can be triggered by various events, such as inserting, updating, or deleting data in a table, and they allow you to perform additional operations based on those events.
+	 
+Q2: How do SQL triggers work? 	
+	
+	SQL triggers are defined using SQL statements and are associated with a specific table. When the defined trigger event (e.g., INSERT, UPDATE, DELETE) occurs on that table, the associated trigger code is executed automatically. The trigger code can consist of SQL statements that can manipulate data in the same or other tables, enforce constraints, or perform other actions. Triggers are executed within the transaction scope, and they can be defined to execute either before or after the triggering event.
+
+	
+	
+	
+	Explain with example
+	
+	John is the marketing officer in a company. When a new customer data is entered into the company’s database he has to send the welcome message to each new customer. If it is one or two customers John can do it manually, but what if the count is more than a thousand? Well in such scenario triggers come in handy. 
+
+	Thus, now John can easily create a trigger which will automatically send a welcome email to the new customers once their data is entered into the database. So I hope you are clear with the introduction of Triggers in SQL.	
+
+	Always remember that there cannot be two triggers with similar action time and event for one table. For example, we cannot have two BEFORE UPDATE triggers for a table. But we can have a BEFORE UPDATE and a BEFORE INSERT trigger, or a BEFORE UPDATE and an AFTER UPDATE trigger.
+	
+	
+	Syntax and Example
+	
+		Create Trigger Trigger_Name
+		(Before | After)  
+		[ Insert | Update | Delete]
+		on [Table_Name]
+		[ for each row | for each column ]
+		[ trigger_body ]
+		
+		
+	Now let me break down this syntax and explain each and every part in detail.
+
+	Create Trigger
+		These two keywords are used to specify that a trigger block is going to be declared. 
+		
+	Trigger_Name
+	It specifies the name of the trigger. Trigger name has to be unique and shouldn’t repeat.
+	
+	( Before | After )
+	This specifies when the trigger will be executed. It tells us the time at which the trigger is initiated, i.e, either before the ongoing event or after.
+	
+	Before Triggers are used to update or validate record values before they’re saved to the database. 
+	After Triggers are used to access field values that are set by the system and to effect changes in other records. The records that activate the after trigger are read-only. We cannot use After trigger if we want to update a record because it will lead to read-only error.
+	
+ [ Insert | Update | Delete ]
+	These are the DML operations and we can use either of them in a given trigger.
+	
+	on [ Table_Name ]
+	We need to mention the table name on which the trigger is being applied. Don’t forget to use on keyword and also make sure the selected table is present in the database.
+	
+	[ for each row | for each column ] 
+	
+	Row-level trigger gets executed before or after any column value of a row changes
+	Column Level Trigger gets executed before or after the specified column changes
+	
+	[ trigger_body]
+	
+	It consists of queries that need to be executed when the trigger is called.	
+	
+	
+	Display list of triggers
+	
+	SHOW TRIGGERS;
+	
+	
+	Let’s try to use the first variant i.e, Before Insert
+	
+	CREATE TRIGGER calculate
+	before INSERT 
+	ON student
+	FOR EACH ROW
+	SET new.marks = new.marks+100;
+	
+	
+	
+	There are 6 different types of triggers in MySQL:
+		1. Before Update Trigger:
+		2. After Update Trigger:
+		3. Before Insert Trigger:
+		4. After Insert Trigger:
+		5. Before Delete Trigger:
+		6. After Delete Trigger:
+		

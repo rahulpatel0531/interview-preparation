@@ -1,0 +1,48 @@
+
+
+
+// inner join --> fetches mathing records only
+
+// left  join  formula 
+// left join -->  inner join + any additional record from the left table (all remaining records from left table)
+
+// right  join  formula 
+// right join -->  inner join + any additional record from the right table (all remaining records from right table)
+
+
+// Full join formula
+// Full Join --> Inner join 
+//                  + all remaing records from left table 
+//                  + all remaing records from right table 
+
+
+// CROSS JOIN
+//  CROSS JOIN returns cartesian product 
+
+// example 
+// select e.emp_name, d.dept_name
+// from employee e
+// cross join deparment d;
+
+
+// Note:  dont need to join condition
+
+
+
+// SELF JOIN
+
+// select child.name as child_name, child.age as child_age, parent.name as parent_name, parent.age as parent_age
+// from family as child
+// join family as parent on child.parent_id = parent.member_id
+
+
+// NATURAL JOIN
+
+// example 
+// select e.emp_name, d.dept_name
+// from employee e
+// natural join deparment d;
+
+
+
+

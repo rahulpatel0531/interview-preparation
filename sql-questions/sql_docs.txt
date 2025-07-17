@@ -1,0 +1,373 @@
+
+
+=============== 
+What is SQL?
+
+SQL, which stands for Structured Query Language, is a standardized computer language defined by the ANSI (American National Standards Institute). This language is specifically designed for accessing and manipulating database systems. SQL serves as the backbone for managing data within relational database management systems (RDBMS), where data is organized in tabular form, with relationships between data elements also represented in tables.
+
+
+Database Languages
+	Data Definition Language	
+	Data Manipulation Language
+	Data Control Language
+	Transactional Control Language
+	
+	 Data query language(DQL) is the subset of “Data Manipulation Language”. The most common command of DQL is SELECT statement. SELECT statement help on retrieving the data from the table without changing anything in the table.
+
+What's the difference between SQL and MySQL?
+
+SQL is a language for managing databases , while MySQL is a specific database management system that uses SQL as its query language. MySQL is just one of many RDBMS options available.
+
+What is Database?
+A database is an organized collection of Structured data stored in a computer system and usually controlled by a database management system (DBMS).
+
+What is a MySQL database?
+MySQL is an open source relational database management system based on SQL. It was designed and optimized for web applications and can run on any platform.
+
+
+What is DBMS?
+A Database Management System (DBMS) is a software system that is designed to manage and organize data in a structured manner. It allows users to create, modify, and query a database, as well as manage the security and access controls for that database. DBMS provides an environment to store and retrieve data in convenient and efficient manner.
+
+
+The CREATE DATABASE query in SQL is used to create a new database in the database management system.
+
+	CREATE DATABASE database_name;
+	SHOW DATABASES;
+	USE database_name
+	
+	
+SQL DROP DATABASE statement is a powerful command used to permanently delete an existing database from a database management system (DBMS).	
+
+	DROP DATABASE database_name;
+	
+	
+RENAME DATABASE [current_database_name] TO [new_database_name];
+
+CREATE TABLE Statement is used to create a new table in a database.
+
+  
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+
+DROP TABLE table_name;
+
+
+DELETE FROM table_name
+WHERE some_condition;
+
+
+SQL ALTER TABLE is a command used to modify the structure of an existing table in a database.
+
+	ALTER TABLE table_name
+    RENAME TO new_table_name;  OR  CHANGE COLUMN salary sal DECIMAL(10, 2); 
+	
+	
+	ALTER TABLE table_name
+	ADD column_name datatype;
+	
+	
+DROP TABLE table_name;
+DROP DATABASE database_name;
+
+
+TRUNCATE TABLE  table_name;
+
+
+// Create a copy of table 
+CREATE TABLE stud_1 AS SELECT * FROM student_information;
+
+//SQL Backup Table with No Data Example
+CREATE TABLE geeks_student AS SELECT * FROM student_information
+WHERE 1!=1;
+
+
+ALTER TABLE command can add, delete, or modify columns of an existing table.
+
+
+	
+ADD – To add a new column to the table:
+
+	ALTER TABLE table_name
+    ADD column_name datatype;
+	
+MODIFY/ALTER – To change the data type of an existing column:
+	
+	ALTER TABLE table_name
+	MODIFY COLUMN column_name datatype;	
+	
+DROP – To delete an existing column from the table:	
+	
+	ALTER TABLE table_name
+    DROP COLUMN column_name;
+	
+RENAME COLUMN – To rename an existing column:
+
+	ALTER TABLE table_name
+    RENAME COLUMN old_name TO new_name;
+	
+RENAME TO – To rename the table itself:
+	
+	ALTER TABLE table_name
+    RENAME TO new_table_name;
+	
+	
+The INSERT INTO statement in SQL is used to add new rows of data to a table in a database.	
+	
+	INSERT INTO table_name (column1, column2, column3) 
+    VALUES ( value1, value2, value);
+	
+	
+The UPDATE statement in SQL is used to update the data of an existing table in the database. We can update single columns as well as multiple columns using the UPDATE statement as per our requirement.	
+
+	UPDATE table_name SET column1 = value1, column2 = value2,… 
+    WHERE condition;
+	
+
+SQL DELETE can be used to selectively remove records from a database table based on certain conditions. 	
+	
+	DELETE FROM table_name
+    WHERE some_condition;
+
+
+duplicate records
+	SELECT FirstName, LastName, salary,
+    COUNT(*) FROM employees
+    GROUP BY FirstName, LastName, salary
+    HAVING COUNT(*) > 1;
+	
+delete duplicate records and select records
+
+	DELETE FROM employees
+	WHERE userid NOT IN ( SELECT MIN(userid) FROM employees
+	GROUP BY FirstName, LastName, salary );
+	SELECT *  FROM employees	
+
+	
+		
+	What is the SQL WITH Clause?
+	
+	The clause is used for defining a temporary relation such that the output of this temporary relation is available and is used by the query that is associated with the WITH clause.	
+
+	syntax:
+	
+	WITH temporaryTable (averageValue) AS (
+    SELECT AVG (Attr1)
+    FROM Table
+	)
+    SELECT Attr1
+    FROM Table, temporaryTable
+    WHERE Table.Attr1 > temporaryTable.averageValue;
+
+
+The HAVING clause was introduced in SQL to allow the filtering of query results based on aggregate functions and groupings, which cannot be achieved using the WHERE clause that is used to filter individual rows. 
+
+	SELECT Department, sum(Salary) as Salary
+	FROM employee
+	GROUP BY department
+	HAVING SUM(Salary) >= 50000; 
+	
+
+SQL ORDER BY clause sorts the result of the SELECT statement either in ascending or descending order.
+
+	SELECT * FROM table_name ORDER BY column_name ASC | DESC
+	
+
+The GROUP BY Statement in SQL is used to arrange identical data into groups with the help of some functions. i.e. if a particular column has the same values in different rows then it will arrange these rows in a group. 	
+	
+	SELECT SUBJECT, YEAR, Count(*)
+	FROM Student
+	GROUP BY SUBJECT, YEAR;
+	
+	
+	
+The LIMIT clause in SQL allows users to control the amount of data retrieved and displayed in the result set.
+	
+	SELECT column1, column2, …
+	FROM table_name
+	WHERE condition
+	ORDER BY column
+	LIMIT [offset,] row_count;
+
+	Here,
+
+	offset: number of rows to skip before returning the result set.
+	row_count: number of rows to return in the result set.
+	
+	
+	SELECT * FROM table_name ORDER BY column_name LIMIT X OFFSET Y;
+	
+	SELECT * FROM Student 
+	ORDER BY ROLLNO LIMIT 2,5;
+	
+	
+SQL AND and OR operators are used for data filtering and getting precise results based on conditions. They are used with the WHERE clause and are also called conjunctive operators.
+
+The AND operator returns records where all conditions specified are true and the OR operator returns records where at least one condition specified is true.
+
+
+The AND operator in SQL only displays those records where all conditions are true, i.e. both condition1 and condition2 are True.	
+
+	SELECT * FROM table_name WHERE condition1 AND condition2;
+	
+The OR Operator in SQL displays the records where any one condition is true, i.e. either condition1 or condition2 is True.
+
+	SELECT * FROM table_name WHERE condition1 OR condition2 OR… conditionN;
+	
+	
+SQL LIKE operator is used with the WHERE clause to search for a specified pattern in a column. LIKE operator finds and returns the rows that fit in the given pattern.
+
+	SELECT * FROM products WHERE name LIKE BINARY 'apple%'
+	
+The IN Operator in SQL is used to specify multiple values/sub-queries in the WHERE clause. It provides an easy way to handle multiple OR conditions.	
+
+	SELECT Fname, Lname FROM employee
+	WHERE Address IN ('Delhi','Himachal');
+	
+	
+NOT operator is used to exclude specific data from the result set.
+	
+	SELECT * FROM Customers WHERE NOT Country=’UK’;
+	
+SQL IS NULL is a logical operator that checks for NULL values in a column.
+
+Note: A NULL value is different from a Zero Value and Blank Spaces. A field that has NULL value means the field was left blank.
+	
+	SELECT * FROM geeksforgeeks
+	WHERE email IS NULL;
+	
+The UNION operator in SQL is used to combine the result set of multiple SELECT statements and return one result set.
+
+	SELECT columnnames FROM table1
+	UNION
+	SELECT columnnames FROM table2;
+	
+	UNION operator provides unique values by default. To find duplicate values, use UNION ALL.
+
+	SELECT Country, Name FROM Emp1
+	WHERE Name='Aditya'
+	UNION ALL
+	SELECT Country, Name FROM Emp2
+	WHERE Country='Ireland'
+	ORDER BY Country;
+	
+	
+ALL operator is used to select all tuples of SELECT STATEMENT. It is also used to compare a value to every value in another value set or result from a subquery.
+
+The ALL operator returns TRUE if all of the subqueries values meet the condition. The ALL must be preceded by comparison operators and evaluates true if all of the subqueries values meet the condition.
+ALL is used with SELECT, WHERE, HAVING statement.	
+
+	SELECT OrderID 
+	FROM OrderDetails 
+	GROUP BY OrderID 
+	HAVING max(Quantity) > ALL (SELECT avg(Quantity) 
+								FROM OrderDetails 
+								GROUP BY OrderID);
+								
+								
+
+CASE Statement in SQL
+
+	The CASE statement in SQL is a conditional expression that allows you to perform conditional logic within a query.
+	It is commonly used to create new columns based on conditional logic, provide custom values, or control query outputs based on certain conditions.
+	If no condition is true then the ELSE part will be executed. If there is no ELSE part then it returns NULL.	
+
+		SELECT CustomerName, Age,
+		CASE
+			WHEN Country = "India" THEN 'Indian'
+			ELSE 'Foreign'
+		END AS Nationality
+		FROM Customer;
+		
+
+The EXISTS condition in SQL is used to check whether the result of a correlated nested query is empty (contains no tuples) or not. The result of EXISTS is a boolean value True or False. It can be used in a SELECT, UPDATE, INSERT or DELETE statement. 
+
+		SELECT fname, lname 
+		FROM Customers 
+		WHERE EXISTS (SELECT * 
+					  FROM Orders 
+					  WHERE Customers.customer_id = Orders.c_id);
+					  
+					  
+		SELECT lname, fname
+		FROM Customers
+		WHERE NOT EXISTS (SELECT * 
+						  FROM Orders 
+						  WHERE Customers.customer_id = Orders.c_id
+						  
+						  
+		SELECT * FROM employees
+		GROUP BY salary
+		ORDER BY salary DESC LIMIT 1 OFFSET 1
+
+
+		SELECT name, salary
+		FROM employee
+		WHERE salary = (
+			SELECT MAX(salary)
+			FROM employee
+			WHERE salary < (SELECT MAX(salary) FROM employee)
+		);
+
+	
+	PRIMARY KEY in SQL is a column (or group of columns) that uniquely identifies the records in that table. A primary key must contain unique values and can not have any NULL value.
+
+
+	When there are two or more columns in the primary key it is called a composite key.
+	
+	ALTER TABLE Persons
+	ADD CONSTRAINT PK_Person PRIMARY KEY (PersonID);
+	
+	ALTER TABLE Persons
+	DROP PRIMARY KEY;
+
+	
+	The SQL FOREIGN KEY constraint The foreign key constraint ensures that the values in the foreign key column match the values in the primary key column of the referenced table, maintaining referential integrity.
+	
+	The table with a foreign key is called a foreign table/child table/referencing table and the table with a primary key that is referenced by a foreign key is called a primary table/parent table /referenced Table.
+	
+	When defining a FOREIGN KEY constraint, you can specify what happens when a referenced row in the parent table is deleted or updated. This is done using the ON DELETE and ON UPDATE clauses followed by the CASCADE, SET NULL, or NO ACTION option.
+	
+	The FOREIGN KEY constraint in SQL is used to maintain the referential integrity of data within the database.
+
+
+	CREATE TABLE Orders (
+	OrderID INT PRIMARY KEY,
+	OrderNumber INT NOT NULL,
+	CustomerID INT,
+	FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+	);
+	
+	
+	ALTER TABLE table_name DROP CONSTRAINT fk_name;
+	
+	
+
+
+
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+	
+
+
+
+
+	
+
+	
+

@@ -1,0 +1,41 @@
+1. What are the diffrent data types in Javascript?
+2. Explain var, let, const 
+3. What is hoisting in Javascript
+4. What is a closure and how it is used?
+5. diffrence between "==" and "==="
+6. What is event loop in Javascript
+7. What are promises and how they do work?
+8. Exaplain async/await with example
+9. diffrence between synchronous ans asynchronous
+10. What is prototype chain
+11. How does Javascript handle scope?
+12. diffrence between null and undefined?
+13. What is event delegtion?
+14. What is this keyword, explain the concept of this keyword
+15. How does call(), apply(), and bind() work with example
+16. diffrence between function declaration and function  expression
+17. What are modules in Javascript
+18. How do you handle error in Javascript
+19. diffrence between shallow and deep copy
+20. What is callback function, how it work  explain with example
+21. What is template literals
+22. What is temporal dead zone?
+23. diffrence between "for in" and "for of" loop
+24. What is the diffrence between map(), filter() and reduce() method with example
+25. What is debouncing and throttling, explain with example
+26. What is generators in javascript
+27. How does garbage collection work in javascript
+28. What are symbols in javascript
+29. Explain the diffrence between steTimeout() and setInterval() 
+30. What is the event bubling and event capturing
+31. How can you create private variables in javascript
+32. differnce between Object.freeze() and Object.seal()
+33. How do you optimize javascript performace
+34. Explain ES6 features
+35. What is the puspose of new keyword
+36. What is the diffrence between a class and protype
+37. Expain spread and rest operator with example  
+38. How does Node.js handle asynchronous operations?
+    Node.js uses the event-driven architecture and callback/event loop mechanism to handle asynchronous tasks like I/O, file system, database operations, etc., without blocking the main thread.
+
+

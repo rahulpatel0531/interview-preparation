@@ -1,0 +1,28 @@
+1.  What is SQL?
+2.  What is a database?
+3.  What is the diffrence between CHAR and VARCHAR data types?
+4.  What is primary key?
+5.  What is foreign key?
+6.  What is the purpose of the DEFAULT, UNIQUE constraint?
+7.  What is normalization?
+8.  What is denormalization, and when is it used?
+9.  What is view in SQL?
+10. What are the different types of joins in SQL?
+11. What is the pupose of GROUP BY clause?
+12. What is aggregate functions in SQL?
+13. What is subquery?
+14. What is the difference between the WHERE and HAIVNG clauses?
+15. What are indexes, why they are used?
+16. difference between DELETE and TRUNCATE?
+17. What is cursor in SQL?
+18. What is trigger in SQL?
+19. What are NULL values in SQL?
+20. What is a stored procedure, and advantages of using stored procedures?
+21. Purpose of ALTER commnd?
+22. What is composite key?
+23. What is UNION, and difference between UNION and UNION ALL?
+24. How does the CASE statement work in SQL?
+25. WHAT are scalar function in SQL?
+26. What is the purpose of the COALESCE function?
+27. What are window function?
+28. What is SQL Injection, and how to use it?

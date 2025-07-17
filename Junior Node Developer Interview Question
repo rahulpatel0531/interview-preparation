@@ -1,0 +1,167 @@
+
+
+1.  What is Nodejs? 
+
+    Node.js is an open-source JavaScript runtime environment built on Chrome's V8 JavaScript engine.
+    It provides an event-driven, non-blocking I/O model, and cross-platform runtime environment for building highly scalable server-side applications using javascript.
+
+2. why used Nodejs?    
+
+    It uses an event-driven, non-blocking I/O model, making it efficient and suitable for real-time applications like chat apps, APIs, and data streaming services.
+
+
+3. What is the difference between require and import?
+
+    require is used in CommonJS modules, and it is synchronous. It is typically used in older Node.js versions.
+
+    import is part of ES6 modules, which are newer and allow for better tree-shaking and static analysis. It is asynchronous and is now widely used in modern Node.js projects.
+
+
+4. What is the event loop in Node.js?
+
+    The event loop  is a mechanism that handles asynchronous operations. It allows Node.js to perform non-blocking I/O operations by offloading tasks like file reading, database queries, or network requests to the system kernel or a thread pool. Once the task completes, a callback is queued for execution.
+
+5. What are streams in Node.js?
+
+    Streams  are objects that enable reading or writing data in chunks instead of loading the entire data into memory. This makes them efficient for handling large files or real-time data transfer.
+
+    There are four fundamental stream types within Node.js:
+
+    Readable: For reading data, streams from which data can be read (for example, fs.createReadStream()).
+    Writable: For writing data,  streams to which data can be written (for example, fs.createWriteStream()).
+    Duplex: For both reading and writing, streams that are both Readable and Writable (for example, net.Socket).
+    Transform: For modifying data during the read/write process (for example, zlib.createDeflate()).
+   
+6. How do you handle errors in Node.js?
+
+    1. Try/Catch: For synchronous code or async/await
+    2. Error-First Callbacks
+     
+7. What is middleware in Express.js?
+
+    Middleware functions are functions that have access to the request (req) and response (res) objects, as well as the next function. It perform various tasks such as modifying request or response objects, performing authentication, logging, parsing,  error handling, and more.
+
+
+8. What is package.json in a Node.js project?
+
+    package.json is a configuration file for a Node.js project that contains metadata about the project, such as its name, version, dependencies, scripts, and more.
+
+9. What is the purpose of process in Node.js?
+
+    The process object provides information about and control over the current Node.js process. For example:
+
+    process.env: Access environment variables.
+    process.argv: Get command-line arguments.
+    process.exit(): Exit the process.
+
+10. Explain the difference between readFile and createReadStream.
+
+    readFile: Reads the entire file into memory, which can be inefficient for large files.
+    createReadStream: Reads the file in chunks, making it memory-efficient for large files.
+
+12. How do you secure a Node.js application?
+
+    Use helmet middleware to set secure HTTP headers.
+    Validate and sanitize user inputs to prevent injection attacks.
+    Use HTTPS for secure communication.
+    Store sensitive data like passwords securely (e.g., bcrypt for hashing).
+    Implement proper authentication (e.g., JWT).
+    Use dotenv to manage environment variables securely
+
+13. Nodejs Module name
+
+    1. fs (File System Module) : Used to interact with the file system, such as reading, writing, or deleting files.
+    2. http : Enables creating HTTP servers and clients.
+    3. path: Helps work with file and directory paths.
+    4. os: Provides information about the operating system.
+    5. events: The events module allows us to work with event in nodejs .
+    6. crypto: Used for cryptographic functionality like hashing and encryption.
+    7. stream: Handles streaming data, such as file operations or real-time data.
+    8. child_process: child_process module allows you to create and control child processes, enabling you to execute system commands, run scripts, and perform other operations outside the main Node.js process.
+    9. zlib: Provides compression and decompression functionality.
+
+    10. cluster:  The cluster module can be used to run multiple intances of nodejs that can distribute workloads.
+
+    11. worker_threads : The worker_threads module enables the use of threads that execute javascript in parallel,  worker_threads module allows running multiple apllication threads within a single nodejs instance. 
+
+    Buffer: Buffer is a module that allows the handling of streams that contain only binary data. An empty buffer of length '10' can be created by this method
+
+    Domains: Domains provide a way to handle multiple different IO operations as a single group
+
+    DNS module is used to connect to a DNS server and perform name resolution by using the following method: dns.resolve()
+
+    DNS module is also used for performing name resolution without a network communication by following method: dns.lookup()
+
+14. Global Object in nodejs?
+
+    global, process, console, setTimeout, setInterval, setImmediate, 
+
+    __dirname:  Provides the directory name of the current module.
+    __filename:  Provides the absolute path of the current module file.
+    module : Refers to the current module and provides information about it.
+    require : A function used to include modules, JSON, or local files.
+    Buffer:  A global object used to work with binary data directly.
+    URL and URLSearchParams : Provides methods to work with URLs.
+    exports :  A shorthand for module.exports. It allows exporting objects or functions from a module.
+    require.cache: Caches loaded modules to improve performance.
+
+15. What is Cors.
+
+    Cross-origin resource sharing (CORS) is a browser security mechanism that allows web applications to access resources from other domains.
+
+16. What is event?
+
+    An event is an action or occurence that has happend in our application that we can respond to.
+    events module provides the capability to create own custom event and respond to those custom event to non-bloking manner. 
+
+17. Parts of nodejs:
+
+    Parts of Node.js
+    1. Modules
+    2. Console
+    3. Cluster
+    4. Global
+    5. Error Handling
+    6. Streaming
+    7. Buffer
+    8. Domain
+    9. DNS
+    10.Debugger  
+
+18. Event Driven: event driven is the just a process of those registering callback and having them call when I/O operation is done.     
+
+
+19. Explain event-driven programming in Node.js.
+    Node.js uses an event-driven architecture, where events are emitted, and listeners handle those events. The EventEmitter module facilitates this.
+
+
+20. What are callback function
+    A callback function is a function passed as an argument to another function to be executed later.
+
+
+21. What caching strategies can you use in Node.js applications?
+
+    In-memory caching (e.g., node-cache).
+    Distributed caching (e.g., Redis).
+
+22. How do you handle scalability and load balancing in Node.js applications?
+
+    Use clustering (cluster module).
+    Deploy behind load balancers (e.g., NGINX, AWS ELB).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+

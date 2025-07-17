@@ -1,0 +1,88 @@
+
+-- Q . Find the employees whos salry more than the avrage salary earn by all employees.
+
+-- select * 
+-- from employee
+-- where salary > (select AVG(salary) from employee )  -- subquery / inner query
+
+
+-- Different types of subqueries
+-- 1. Scalar subquery -> it always retrun one row and  one column 
+-- 2. Multiple row subquery --> it return multiple row and multiple column or retun only 1 column and multiple row
+-- 3. Correlated subquery --> a subquerywhich is realted to the outer query
+
+
+-- Scalar subquery 
+
+
+-- select e.* 
+-- from employee e
+-- join (select AVG(salary) sal from employee) avg_sal
+--  on e.salary = avg_sal.sal
+
+
+-- Multiple row subquery
+-- Q.  
+
+
+-- select * 
+-- from employee
+-- where (dept_name, salary) in (select dept_name, MAX(salary) from employee group by dept_name)
+
+
+--- single column , multiple row subquery
+-- Q.  Find deparment who do not have any employyes
+
+
+-- select * 
+-- from deparment
+-- where not in (select distinct dept_name from employee)
+
+
+-- Correlated Subquery
+
+-- Q. Find the employees in each department who earn more than the avarage salry in that department
+
+-- select * 
+-- from employee e1
+-- where salary > (select AVG(salary) from employee e2 where e2.dept_name = e1.dept_name)
+
+
+
+-- Q.  Find deparment who do not have any employees
+
+-- select * 
+-- from deparment d
+-- where not exists (select 1 from employee e where e.dept_name = d.dept_name );
+
+
+
+
+-- Different SQL clause where subquery is allowed
+-- SELECT
+-- FROM
+-- WHERE
+-- HAVING
+
+
+
+-- Using a subquery in SELECT Clause
+
+-- QUESTIONS --> fetch all employee details and add remarks to those employee who earn more than the avarage pay.
+
+-- select * , (case when salary > (select avg(salary) from employee)
+--             then    "Higher than avarage"
+--             else null
+--             end ) as remarks 
+-- from employee            
+
+
+
+-- Recomonded way
+
+-- select * , (case when salary > avg_sal.sal
+--             then    "Higher than avarage"
+--             else null
+--             end ) as remarks 
+-- from employee  
+-- cross join (select avg(salary) sal from employee) avg_sal

@@ -1,0 +1,115 @@
+
+
+MongoDB is a document-oriented NoSQL database system
+MongoDB is an open-source and cross-platform database System.
+ MongoDB stores data in BSON format,  (BSON stands for binary representation of JSON documents)
+ 
+ MongoDB the most popular NoSQL database, is an open-source document-oriented database. The term ‘NoSQL’ means ‘non-relational‘.
+ 
+  A Database contains a collection, and a collection contains documents and the documents contain data, they are related to each other. 
+  
+In MongoDB, the data records are stored as BSON documents. Here, BSON stands for binary representation of JSON documents, although BSON contains more data types as compared to JSON. The document is created using field-value pairs or key-value pairs and the value of the field can be of any BSON type. 
+
+The MongoDB cursor is a pointer that references the documents of the collection returned by the find() method.
+
+db.collection_name.find() 
+
+db.article.findOne()
+
+db.article.find().pretty() 
+
+The equality operator($eq) is used to match the documents where the value of the field is equal to the specified value. In other words, the $eq operator is used to specify the equality condition.
+
+
+db.article.find({author:{$eq:"devil"}}).pretty()  
+
+To get the specific numeric data using conditions like greater than equal or less than equal use the $gte or $lte operator in the find() method. 
+
+db.article.find({length:{$gte:510}}).pretty()
+
+db.article.find({$and:[{level:{$eq:"high"}},{level:{$exists : "true"}}]}).pretty()
+
+
+db. article. find({author : "devil" }). limit(2) . pretty() 
+
+
+======================================================
+
+ use Database_Name
+ 
+ show dbs
+ 
+ db.createCollection("collection_name");
+  
+ db.dropDatabase()
+   
+   
+   
+MongoDB CRUD Operations
+
+ insertOne, insertMany, bulkWrite().
+ find, findOne
+ deleteOne, deleteMany
+ updateOne, updateMany, db.collection.replaceOne()
+ 
+ Note: pretty() method is used to decorate the result such that it is easy to read.
+
+db.student.insertOne({Name: "Akshay", Marks: 500})
+
+ 
+ 
+MongoDB updateOne() is a method that is used to update a single document that matches a specified filter.
+
+upsert: The default value of this parameter is false. When it is true it will make a new document in the collection when no document matches the given condition in the update method.
+
+db.student.updateOne(
+  { name: "Charlie" },
+  { $set: { age: 28 } },
+  { upsert: true }
+);
+ 
+ What is a Collection in MongoDB?
+A collection in MongoDB is a group of documents. collections have dynamic schemas.
+
+{"greeting" : "Hello world!", "views": 3}
+{"signoff": "Good bye"}
+
+What is a Document in MongoDB?
+A Document in MongoDB is an ordered set of keys with associated values. It is represented by a map, hash, or dictionary. In JavaScript, documents are represented as objects:
+
+
+example : {"greeting" : "Hello world!", "views" : 3}
+
+
+Auto-Sharding: Auto-sharding in MongoDB automatically distributes data across multiple servers, enabling horizontal scaling and efficient handling of large datasets.
+
+
+db.Collection_name.find: This specifies the database (db) and the collecttion (Collection_name) we are querying from and initiates a find operation.
+(selection_criteria, projection, options): These are optional arguments that refine the results:
+selection_criteria (document): Defines which documents to find based on specific conditions. An empty document ({}) retrieves all documents.
+projection (document): Specifies which fields to include or exclude from the returned documents.
+options (document): Allows for additional options like sorting or limiting results
+
+
+db.Collection_Name.sort({field_name:1 or -1})
+
+Explanation: This query sorts the documents in Collection_Name by field_name in ascending order and -1 for descending order.
+
+MongoDB copyTo() method is used to duplicate the contents of one collection into another collection within the same database. It’s like making a copy of a file on your computer to another location.
+
+db.collectionA.copyTo("collectionB")
+
+
+The count() method in MongoDB is a simple and effective way to count the number of documents that meet specific criteria in a collection.
+
+db.student.count()
+db.student.count({age:{$gt:18}})
+
+
+The distinct() method in MongoDB is used to find the unique values for a specified field across a single collection.
+
+
+MongoDB createIndex()
+MongoDB provides a createIndex() method to create one or more indexes on collections. Using this method we can create different types of indexes like text index, 2dsphere index, 2d index, etc.
+It takes three parameters first one is a document that contains the field and value pairs where the field is the index key and the value describes the type of index for that field and others are optional.
+

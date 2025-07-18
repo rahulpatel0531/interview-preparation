@@ -1,0 +1,36 @@
+
+
+✅ How to Structure Your Answer
+Use this 3-part structure to give a clear and strong response:
+
+1. Project Overview (Brief)
+“I worked on a delivery management system where customers could book orders and delivery agents could track assigned trips.”
+
+2. Your Role (What was your position?)
+“I worked as a Backend Node.js Developer in a team of 4 developers.”
+
+3. Your Key Responsibilities (Top 4–5 responsibilities)
+Developed REST APIs using Express.js and Sequelize with MySQL/PostgreSQL.
+
+Created authentication and authorization with JWT and middleware.
+
+Handled file uploads (e.g., images for user profile or parcel image).
+
+Implemented pagination, search, and filters for listing endpoints.
+
+Wrote database models and associations with Sequelize ORM.
+
+Collaborated with frontend (React) team using Postman and API docs.
+
+Used Git for version control and Jira for task management.
+
+example: 
+
+"In my last project, I worked as a Node.js backend developer on a delivery platform where users could place orders, and delivery agents could manage their trips. My main responsibilities included creating REST APIs with Express.js and Sequelize using a PostgreSQL database. I implemented user authentication using JWT, wrote database models with relationships (such as customers, orders, and delivery agents), and added features like search, pagination, and filters. I also collaborated with frontend developers, tested APIs using Postman, and managed code through Git."
+
+
+Bonus Tips:
+Be specific: Mention exact features you built.
+Show ownership: Use phrases like “I was responsible for…” or “I implemented…”
+Mention tools: Express, JWT, Sequelize, Git, Postman, etc.
+Mention teamwork if applicable: worked with frontend, QA, or DevOps team

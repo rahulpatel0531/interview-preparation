@@ -1,0 +1,43 @@
+what mysql engine and name of mysql engine.
+    InnoDB: InnoDB is the default storage engine for MySQL as of MySQL 5.5. It offers ACID (Atomicity, Consistency, Isolation, Durability) compliance, which ensures data integrity. InnoDB supports transactions and foreign keys, making it a good choice for applications requiring robust data integrity and concurrent access.
+
+
+What is a Stored Procedure?
+    A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+    -- Creating a stored procedure
+    CREATE PROCEDURE GetEmployeeByID(IN EmployeeID INT)
+    BEGIN
+        SELECT * FROM Employees WHERE EmployeeID = EmployeeID;
+    END;
+
+    -- Calling the stored procedure
+    CALL GetEmployeeByID(101);
+
+
+
+what is trigger in sql
+    a trigger is a set of SQL statements that are automatically executed (or "triggered") in response to a specific event or action that occurs within a database. Triggers are used to enforce data integrity, perform logging, or automate certain actions when changes are made to data in database tables. Triggers are typically associated with tables and can be set to execute either before or after specific data manipulation operations (e.g., INSERT, UPDATE, DELETE) occur.
+
+    CREATE TRIGGER trigger_name
+    {BEFORE | AFTER} {INSERT | UPDATE | DELETE} ON table_name
+    FOR EACH ROW
+    BEGIN
+        -- SQL statements to be executed when the trigger is triggered
+    END;
+
+
+diffrence between mysql, postgres, and mongodb
+
+
+array methods
+
+how to convert array to object
+
+what is service in nodejs
+
+
+let rahul = '45000';
+rahul - false
+console.log(rahul)
+

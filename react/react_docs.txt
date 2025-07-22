@@ -2,7 +2,7 @@
 
 =================== React Docs ===================  
 
-1. Create react app command  "npx create-react-app counter"
+1. Create react app command  "npx create-react-app counter"   or  npm create vite@latest my-app
 
 2. Export the components 
 
@@ -20,7 +20,7 @@ JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering 
 
 7. Props: Props are the information that you pass to a JSX tag. For example, className, src, alt, width, and height are some of the props you can pass to an <img>:
 
-8. Event handlers : Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs, and so on.
+8. Event handlers : Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs, and so on.npm create vite@latest my-app
 
 9. e.stopPropagation() stops the event handlers attached to the tags above from firing.
    e.preventDefault() prevents the default browser behavior for the few events that have it

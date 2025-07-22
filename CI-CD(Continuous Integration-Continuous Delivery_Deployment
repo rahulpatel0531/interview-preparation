@@ -1,0 +1,31 @@
+<!-- 🔧 What is CI/CD?
+    🔁 CI/CD stands for:
+    CI (Continuous Integration): Automatically build and test your code whenever you or someone else pushes code to a shared repository.
+
+    CD (Continuous Delivery/Deployment): Automatically deliver or deploy your code to a server or cloud environment after successful CI.
+
+🎯 Why use CI/CD?
+    Detect bugs early.
+    Avoid broken code going into production.
+    Automate the boring stuff like testing, building, and deploying.
+    Improve collaboration in team projects.
+
+⚙️ Key Terms You Must Know
+    Term	Description
+    Pipeline	A series of steps (build, test, deploy) automated together.
+    Build	Compiling or packaging code. (e.g., installing dependencies)
+    Test	Running unit tests, integration tests, etc.
+    Deploy	Putting your app live on a server (e.g., production).
+    Job	A task in the pipeline (e.g., install, run tests).
+    Runner	A machine that actually executes your CI/CD jobs (GitHub-hosted or self-hosted).
+
+🚀 How CI/CD Works (Overview)
+    Developer pushes code to GitHub (or GitLab, Bitbucket, etc.)
+    CI/CD tool (e.g., GitHub Actions) detects the push.
+    It runs:
+    npm install
+    npm test
+    (optional) Linting and security scans
+    If all passes, it:
+    Builds the project
+    Deploys it to a server (e.g., via SSH, Docker, or cloud) -->

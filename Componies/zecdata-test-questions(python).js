@@ -98,8 +98,8 @@ for (let i = 0; i < input.length; i++) {
         consonant++;
     }
 }
-// console.log('Even count:', even);
-// console.log('Consonant count:', consonant);
+console.log('Even count:', even);
+console.log('Consonant count:', consonant);
 
 /////=========================================================================================
 

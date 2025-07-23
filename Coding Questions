@@ -1,0 +1,112 @@
+✅ Array-Based Questions
+Reverse an array
+
+Find the maximum and minimum elements in an array
+
+Remove duplicates from an array
+
+Check if two arrays are equal
+
+Find the intersection and union of two arrays
+
+Rotate an array by k positions
+
+Find the frequency of each element in an array
+
+Find the second largest and second smallest element
+
+Move all zeros to the end
+
+Find the subarray with the maximum sum (Kadane’s Algorithm)
+
+Check if an array is a subset of another
+
+Flatten a nested array (deep flatten)
+
+Find the first non-repeating element
+
+Sort array of 0s, 1s, and 2s (Dutch National Flag Problem)
+
+Merge two sorted arrays
+
+Find pairs with a given sum
+
+Check if a triplet exists with a given sum
+
+Find the longest consecutive sequence
+
+Group anagrams from an array of strings
+
+Chunk an array into smaller arrays
+
+✅ String-Based Questions
+Reverse a string
+
+Check if a string is a palindrome
+
+Check if two strings are anagrams
+
+Count vowels and consonants
+
+Remove duplicate characters
+
+Find the first non-repeating character
+
+Check if a string contains only digits
+
+Capitalize the first letter of each word
+
+Find the longest word in a string
+
+Compress a string (Run-Length Encoding)
+
+Check if a string is a rotation of another
+
+Find all substrings of a string
+
+Longest common prefix among an array of strings
+
+Find the longest palindromic substring
+
+Count frequency of characters in a string
+
+Implement a basic string parser (e.g., parse query string)
+
+Convert string to camelCase or snake_case
+
+Remove spaces from a string
+
+Replace all occurrences of a character
+
+Check for balanced parentheses/brackets
+
+✅ Object-Based Questions
+Count frequency of elements using an object
+
+Convert an object to an array and vice versa
+
+Deep clone an object
+
+Check if two objects are equal
+
+Merge two objects
+
+Remove keys with falsy values
+
+Flatten a nested object
+
+Get all keys or values from an object
+
+Access nested object properties safely
+
+Group array items by a property (e.g., group by age)
+
+Sort array of objects by a specific key
+
+Convert a query string to an object
+
+Count the number of keys in an object
+
+Create a lookup table from an array
+
+Find common key-value pairs in two objects

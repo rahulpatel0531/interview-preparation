@@ -4,6 +4,12 @@
 // 1. Infinity  => represents the largest possible number
 // 2. -Infinity => represents the smallest possible number
 
+// OR
+
+// In JavaScript:
+// Infinity represents a number greater than any other number.
+// -Infinity represents a number less than any other number.
+
 console.log(Infinity);    // Output: Infinity
 console.log(-Infinity);   // Output: -Infinity
 

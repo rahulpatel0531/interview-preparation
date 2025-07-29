@@ -1,0 +1,14 @@
+<!-- 
+
+Data Structures : Data Structures are ways to store and organize data in memory so it can be used efficiently.
+
+Common Data Structures:
+
+Data Structure	    Description
+Array	            Stores items at contiguous memory locations
+Linked              List	Each element points to the next one
+Stack	            LIFO – Last In First Out
+Queue	            FIFO – First In First Out
+Hash Table / Map	Key-value pairs for fast access
+Tree	            Hierarchical structure (e.g., Binary Tree)
+Graph	            Set of nodes connected by edges

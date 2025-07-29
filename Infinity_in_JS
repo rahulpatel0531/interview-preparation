@@ -1,0 +1,33 @@
+// ✅ What is -Infinity and Infinity in JavaScript?
+
+// JavaScript has two special numeric constants:
+// 1. Infinity  => represents the largest possible number
+// 2. -Infinity => represents the smallest possible number
+
+console.log(Infinity);    // Output: Infinity
+console.log(-Infinity);   // Output: -Infinity
+
+// ✅ When is it used?
+// It's commonly used as initial values when searching for min/max in a list
+
+function findMinMax(arr) {
+    let min = Infinity;
+    let max = -Infinity;
+
+    for (let num of arr) {
+        if (num < min) min = num;
+        if (num > max) max = num;
+    }
+
+    return { min, max };
+}
+
+console.log(findMinMax([10, 20, -5, 7, 100])); // Output: { min: -5, max: 100 }
+
+// ✅ Math comparison example
+console.log(100 < Infinity);     // true
+console.log(-100 > -Infinity);   // true
+
+// ✅ Infinity arithmetic
+console.log(1 / 0);   // Infinity
+console.log(-1 / 0);  // -Infinity 

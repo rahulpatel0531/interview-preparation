@@ -19,7 +19,6 @@ function secondLargest(arr) {
             secondLargest = arr[i];
         }
     }
-
     return secondLargest;
 }
 

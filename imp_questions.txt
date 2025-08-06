@@ -4,6 +4,22 @@ allowing for asynchronous, non-blocking I/O and building scalable, and responsiv
 
 
 What is buffer in  nodejs?
+	In Node.js, a Buffer is a built-in object used to handle binary data directly in memory. This is especially useful when dealing with:
+	File system operations
+	Network protocols (TCP streams, HTTP responses)
+	Working with raw binary data like images, videos, or audio
+
+	When to Use Buffers?
+		Reading/writing files
+		Streaming audio/video
+		Handling raw TCP packets
+		Image processing
+
+		const buffer = Buffer.from('Hello');
+		console.log(buffer); // <Buffer 48 65 6c 6c 6f>
+		console.log(buffer.toString()); // 'Hello'
+
+
     Buffer is a space in memory that store binary data.
 
 
@@ -519,3 +535,64 @@ Note: process.nextTick() runs before setImmediate() because microtasks have high
 
 
 setTimeout schedules a callback after specified delay whereas setImmediate execute immediately after I/O opeation. 
+
+
+
+Cookie: An HTTP cookie is a small piece of data that a server sends to a user's web browser. The browser stores this data and sends it back to the same server with every subsequent request.
+
+	const express = require('express');
+	const cookieParser = require('cookie-parser');
+
+	const app = express();
+	const port = 3000;
+
+	app.use(cookieParser());
+
+	// Set a cookie
+	app.get('/setcookie', (req, res) => {
+		res.cookie('username', 'chetan_patil', { maxAge: 900000, httpOnly: true }); // maxAge in milliseconds (15 minutes)
+		res.send('Cookie "username" has been set');
+	});
+
+	// Read cookies
+	app.get('/getcookie', (req, res) => {
+		const username = req.cookies.username;
+		if (username) {
+			res.send(`Welcome back, ${username}!`);
+		} else {
+			res.send('No "username" cookie found.');
+		}
+	});
+
+
+
+	Session: A session in Node.js is a way to store data (like user information) on the server for individual users between HTTP requests.Sessions help track user state by assigning each user a unique session ID, which is typically stored in a cookie on the user's browser.
+
+
+	    const express = require('express');
+    	const session = require('express-session');
+
+		const app = express();
+
+		// Configure the session middleware
+		app.use(session({
+			secret: 'your-secret-key', // Used to sign the session ID cookie
+			resave: false, // Don't save session if unmodified
+			saveUninitialized: true, // Save uninitialized sessions
+			cookie: { secure: false } // Set to true if using HTTPS
+		}));
+
+		// Route to set a session variable
+		app.get('/set-session', (req, res) => {
+			req.session.username = 'Alice';
+			res.send('Session variable set!');
+		});
+
+		// Route to get a session variable
+		app.get('/get-session', (req, res) => {
+			if (req.session.username) {
+				res.send(`Username from session: ${req.session.username}`);
+			} else {
+				res.send('No username in session.');
+			}
+		});

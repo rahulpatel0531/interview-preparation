@@ -70,3 +70,83 @@ How to practice:
     3.Then optimize using built-ins → learn the fastest way.
     4.Try dry running your code (like we just did for programming).
     5.Track time complexity (Big-O notation).
+
+
+
+============================================================================================================
+
+1. String Manipulation
+
+
+| Problem                                   | Example Input          | Expected Output            |
+| ----------------------------------------- | ---------------------- | -------------------------- |
+| Remove duplicate characters from a string | `"programming"`        | `"progamin"`               |
+| Reverse a string without `.reverse()`     | `"hello"`              | `"olleh"`                  |
+| Check if a string is a palindrome         | `"madam"`              | `true`                     |
+| Count vowels & consonants                 | `"hello"`              | `Vowels: 2, Consonants: 3` |
+| First non-repeating character             | `"swiss"`              | `"w"`                      |
+| Count occurrences of each character       | `"hello"`              | `{ h:1, e:1, l:2, o:1 }`   |
+| Check if two strings are anagrams         | `"listen", "silent"`   | `true`                     |
+| Find longest word in a sentence           | `"I love programming"` | `"programming"`            |
+| Capitalize first letter of each word      | `"hello world"`        | `"Hello World"`            |
+| Compress string                           | `"aaabbc"`             | `"a3b2c1"`                 |
+
+
+2. Array Logic
+
+| Problem                        | Example Input            | Expected Output           |
+| ------------------------------ | ------------------------ | ------------------------- |
+| Find largest & smallest number | `[4, 2, 9, 1]`           | `Largest: 9, Smallest: 1` |
+| Reverse an array               | `[1, 2, 3, 4]`           | `[4, 3, 2, 1]`            |
+| Remove duplicates from array   | `[1, 2, 2, 3, 1]`        | `[1, 2, 3]`               |
+| Find second largest number     | `[4, 9, 1, 7]`           | `7`                       |
+| Rotate array right by 2        | `[1, 2, 3, 4, 5]`        | `[4, 5, 1, 2, 3]`         |
+| Merge two sorted arrays        | `[1, 3, 5]`, `[2, 4, 6]` | `[1, 2, 3, 4, 5, 6]`      |
+| Sum of array elements          | `[1, 2, 3, 4]`           | `10`                      |
+| Missing number in sequence     | `[1, 2, 4, 5]`           | `3`                       |
+| Pairs with sum = 6             | `[1, 5, 7, -1, 5]`       | `(1,5), (7,-1), (1,5)`    |
+| Move zeros to end              | `[0, 1, 0, 3, 12]`       | `[1, 3, 12, 0, 0]`        |
+
+
+3. Number Logic & Math
+
+| Problem                    | Example Input | Expected Output    |
+| -------------------------- | ------------- | ------------------ |
+| Check if number is prime   | `7`           | `true`             |
+| Factorial (loop/recursion) | `5`           | `120`              |
+| Fibonacci up to n terms    | `6`           | `0, 1, 1, 2, 3, 5` |
+| Sum of digits              | `1234`        | `10`               |
+| Reverse a number           | `123`         | `321`              |
+| Armstrong number           | `153`         | `true`             |
+| GCD of two numbers         | `(48, 18)`    | `6`                |
+| Decimal to binary          | `10`          | `"1010"`           |
+| Power without `**`         | `(2, 3)`      | `8`                |
+| All primes up to n         | `10`          | `[2, 3, 5, 7]`     |
+
+
+4. Logical Puzzles & Patterns
+
+
+| Problem                          | Example Input            | Expected Output                                                           |
+| -------------------------------- | ------------------------ | ------------------------------------------------------------------------- |
+| Print number triangle            | `n=4`                    | `1`<br>`12`<br>`123`<br>`1234`                                            |
+| Print star pyramid               | `n=3`                    |   `*`<br>`***`<br>`*****`                                                 |
+| FizzBuzz (1–15)                  | -                        | `1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz` |
+| Intersection of two arrays       | `[1, 2, 3]`, `[2, 3, 4]` | `[2, 3]`                                                                  |
+| Implement `.map()`               | `[1, 2, 3]` with `x*2`   | `[2, 4, 6]`                                                               |
+| Reverse each word in sentence    | `"Hello World"`          | `"olleH dlroW"`                                                           |
+| Flatten nested array             | `[1, [2, [3]]]`          | `[1, 2, 3]`                                                               |
+| Longest substring without repeat | `"abcabcbb"`             | `"abc"`                                                                   |
+| Basic string search              | `"hello world", "world"` | `true`                                                                    |
+
+
+5. Data Structure Basics
+
+| Problem               | Example Input                                                  | Expected Output                          |
+| --------------------- | -------------------------------------------------------------- | ---------------------------------------- |
+| Stack push/pop        | push `1,2`, pop                                                | `Pushed: [1, 2]`, `After pop: [1]`       |
+| Queue enqueue/dequeue | enqueue `1,2`, dequeue                                         | `Enqueued: [1, 2]`, `After dequeue: [2]` |
+| Frequency of elements | `[1, 2, 2, 3, 1]`                                              | `{1: 2, 2: 2, 3: 1}`                     |
+| Group by property     | `[{name:"A", age:20}, {name:"B", age:20}, {name:"C", age:21}]` | `{20: [{...}, {...}], 21: [{...}]}`      |
+| Balanced parentheses  | `"({[]})"`                                                     | `true`                                   |
+| Merge object arrays   | `[{id:1},{id:2}]`, `[{id:2},{id:3}]`                           | `[{id:1},{id:2},{id:3}]`                 |

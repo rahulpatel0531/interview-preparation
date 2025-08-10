@@ -27,7 +27,7 @@ let fruits = ["strawberry", "fig", "apple", "date", "banana"]
 // Output: ["fig", "date", "apple", "banana", "strawberry"]
 
 // method 1 : 
-// console.log(fruits.sort((a, b) => a.length - b.length));
+// console.log(fruits.sort((a, b) => a.length - b.length)); 
 
 // Mothod 2 :
 
@@ -83,6 +83,32 @@ let data = "aabbccddefg"
 //         return
 //     }
 // }
+
+
+// Remove all duplicate characters from a string.
+// Input: "programming"
+// Output: "progamin"
+
+function removeDuplicatesHash(str) {
+  const seen = {};       // step 1: create an empty object to track seen chars
+  let result = '';       // step 2: build result string char-by-char
+
+  for (let i = 0; i < str.length; i++) {
+    const ch = str[i];   // current character
+    if (!seen[ch]) {     // if we haven't added it yet
+      result += ch;      // append to result
+      seen[ch] = true;   // mark as seen
+    }
+  }
+
+  return result;
+}
+
+// test
+console.log(removeDuplicatesHash("programming")); // "progamin"
+
+
+
 
 
 

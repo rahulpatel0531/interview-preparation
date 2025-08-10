@@ -1,0 +1,72 @@
+1. String manipulation
+    These are super common because they test loops, conditions, and thinking without relying on built-in methods.
+
+    1.Remove duplicate characters from a string
+    2.Reverse a string without built-in .reverse()
+    3.Check if a string is a palindrome (same forward & backward)
+    4.Count the number of vowels & consonants in a string
+    5.Find the first non-repeating character in a string
+    6.Count occurrences of each character in a string
+    7.Check if two strings are anagrams (same letters, different order)
+    8.Find the longest word in a sentence
+    9.Capitalize the first letter of each word in a string
+    10.Compress a string (e.g., "aaabbc" → "a3b2c1")
+
+2. Array logic
+    1.Array problems test loops, indexing, and logic.
+    2.Find the largest and smallest number in an array
+    3.Reverse an array without .reverse()
+    4.Remove duplicates from an array without built-ins
+    5.Find the second largest number in an array
+    6.Rotate an array (left/right rotation by k steps)
+    7.Merge two sorted arrays into one sorted array (without built-ins)
+    8.Find the sum of all elements in an array
+    9.Find the missing number in a sequence (e.g., [1,2,4,5] → 3)
+    10.Find all pairs in an array whose sum equals a given number
+    11.Move all zeros to the end of an array without changing the order of other elements    
+
+3. Number logic & math problems
+    These help with loop control, conditions, and optimization.
+
+    1.Check if a number is prime
+    2.Find factorial of a number (loop & recursion)
+    3.Generate Fibonacci series up to n terms
+    4.Find the sum of digits of a number
+    5.Reverse a number (e.g., 123 → 321)
+    6.Check if a number is an Armstrong number (e.g., 153)
+    7.Find the greatest common divisor (GCD) of two numbers
+    8.Convert decimal to binary without built-in methods
+    9.Find the power of a number without using ** or Math.pow()
+    10.Find all prime numbers up to n (Sieve of Eratosthenes method)   
+
+
+4. Logical puzzles & patterns
+    1.Interviewers use these to test problem-solving under pressure.
+    2.Print number patterns (triangle, pyramid, diamond)
+    3.Print star patterns with loops (*, **, ***)
+    4.FizzBuzz problem: print numbers 1–100 but replace multiples of 3 with “Fizz” and multiples of 5 with “Buzz”
+    5.Find the intersection of two arrays without built-ins
+    6.Implement your own .map() or .filter() function
+    7.Reverse each word in a sentence without changing word order
+    8.Flatten a nested array (e.g., [1,[2,[3]]] → [1,2,3])
+    9.Find the longest substring without repeating characters
+    10.Implement basic string search (without .includes() or .indexOf())  
+
+
+5. Data structure basics (arrays & objects)
+    Implement a stack using an array
+    Implement a queue using an array
+    Find frequency of elements in an array
+    Group array elements by a property (like age)
+    Check if a string has balanced parentheses/brackets
+    Merge object arrays without duplicates
+
+
+
+How to practice:
+
+    1.Pick 1–2 problems daily (start from easy ones).
+    2.First try without built-ins → forces logical thinking.
+    3.Then optimize using built-ins → learn the fastest way.
+    4.Try dry running your code (like we just did for programming).
+    5.Track time complexity (Big-O notation).

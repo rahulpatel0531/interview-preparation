@@ -108,6 +108,42 @@ function removeDuplicatesHash(str) {
 console.log(removeDuplicatesHash("programming")); // "progamin"
 
 
+// ========================================================================================================
+
+
+// 11. print table of given number with 1 to 10 and each line print in 2 second gap.
+
+function printTable(number){
+    let i = 1;
+    
+    // Using recursive settimeout
+    // function printNext() {
+    //     console.log(`${number} * ${i} = `, number * i)
+    //     i++;
+            
+    //     if(i <= 10){
+    //         setTimeout(printNext, 1000)
+    //     }
+    // }
+    // printNext()
+    
+    // // Using setInterval 
+    let intervalId  = setInterval(() => {
+        console.log(`${number} * ${i} = `, number * i)
+        
+        i++;
+        
+        if(i > 10){
+            console.log('intervalId ', intervalId )
+            clearInterval(intervalId)
+        }
+    }, 2000)
+
+}
+
+printTable(2)
+
+
 
 
 

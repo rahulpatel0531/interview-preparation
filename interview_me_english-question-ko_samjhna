@@ -1,0 +1,57 @@
+<!-- English samajhne ka tarika (tech interviews me)
+
+    Keywords pakdo:
+    Har question me kuchh technical keywords hote hain jaise "function", "delay", "print", "every 2 seconds", "multiplication table".
+    Tum poora sentence samjho ya na samjho, par keywords pakad lo.
+
+    Break into small parts:
+    Example:
+
+    "Write a function that takes a number and prints its multiplication table from 1 to 10 with a delay of 2 seconds between each print."
+
+    Isme parts hain:
+
+    Write a function ✅
+    Takes a number ✅
+    Prints multiplication table 1 to 10 ✅
+    Delay 2 seconds between each print ✅
+
+Mind me Hindi me translate karo:
+"Ek function banao jo number lega aur uski table 1 se 10 tak print kare, har print ke beech 2 second ka gap ho."
+
+2️⃣ Problem ko solve karne ka thinking process
+Chahe English clear ho ya nahi, tum yeh fixed approach follow karo:
+
+Step 1: Inputs and Outputs identify karo
+    Input: number (e.g., 2)
+    Output: 1 se 10 tak table print ho
+
+Step 2: Requirements samjho
+    Normal table print ✅
+    Delay add karna ✅
+
+Step 3: Code ke liye building blocks identify karo
+    Loop (for or while) table banane ke liye
+    Delay ke liye setTimeout ya setInterval
+    Condition table stop karne ke liye
+
+Step 4: Pehle simple version banao
+    Pehle without delay table print karo
+    Fir delay add karo step-by-step
+
+3️⃣ Interview me jab kuchh samajh na aaye
+Clarify karo:
+    "Could you please repeat the question slowly?"
+    "Do you mean printing the table all at once or line by line?"
+    (Interviewer samjhega ki tum clear understanding chahte ho, ye positive hota hai.)
+
+Example pucho:
+    "Can you give me an example output for the input 2?"
+    (Example milte hi tumhe instantly samajh aa jayega.)
+
+4️⃣ Practice habit banao
+    Tum English + coding dono improve karne ke liye yeh karo:
+    LeetCode Easy + GeeksForGeeks problems solve karo
+    Har problem ka statement English me padho, Hindi me translate karo, fir solve karo
+    Timer lagao (5–10 min thinking, fir coding)
+    Code likhne ke baad explain karo (English me bol kar) -->

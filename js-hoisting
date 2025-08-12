@@ -1,0 +1,148 @@
+Alright Rahul, let’s go step-by-step so it’s crystal clear.
+    I’ll break this into four main parts:
+
+    What is a variable and function declaration / redeclaration / initialization
+    Function definition
+    Difference between var, let, and const with examples
+    How hoisting works (and how it behaves differently for var, let, const, and functions)
+
+1. Variable & Function Terminology
+Variable Declaration
+When you tell JavaScript that a variable exists without necessarily giving it a value.
+
+
+    let x;   // Declaration (x exists but value is undefined)
+    var y;   // Declaration (y exists but value is undefined)
+    Variable Initialization
+    When you assign a value to the variable for the first time.
+
+
+    let x;      // Declaration
+    x = 10;     // Initialization
+    You can also declare + initialize in one step:
+
+
+    let x = 10; // Declaration + Initialization
+    Variable Redeclaration
+    When you declare the same variable name again in the same scope.
+
+
+    var a = 5;
+    var a = 10; // Redeclaration with var ✅ (allowed)
+
+    let b = 5;
+    let b = 10; // ❌ Error (let does not allow redeclaration in same scope)
+
+
+Function Declaration
+A named function that is hoisted entirely (you can call it before it appears in the code).
+
+
+function greet() {
+    console.log("Hello");
+}
+Function Definition
+The actual body of the function — what it does.
+In JavaScript, a function definition happens when you write the { ... } block for a function.
+
+Declaration + definition happen together for normal functions.
+
+Example:
+
+
+function sum(a, b) {   // Declaration
+    return a + b;      // Definition (body)
+}
+2. Difference between var, let, and const
+Feature	var	let	const
+Scope	Function-scoped	Block-scoped	Block-scoped
+Redeclaration	✅ Allowed	❌ Not allowed	❌ Not allowed
+Reassignment	✅ Allowed	✅ Allowed	❌ Not allowed
+Hoisting	Hoisted & initialized with undefined	Hoisted but in Temporal Dead Zone	Hoisted but in Temporal Dead Zone
+Best for	Old code, avoid in modern JS	Variables that will change	Constants that never change
+
+Example 1 – Scope
+
+if (true) {
+    var a = 10;  // function scope
+    let b = 20;  // block scope
+    const c = 30; // block scope
+}
+console.log(a); // 10 ✅
+console.log(b); // ❌ ReferenceError
+console.log(c); // ❌ ReferenceError
+Example 2 – Redeclaration
+
+var x = 1;
+var x = 2; // ✅ works
+
+let y = 1;
+// let y = 2; // ❌ SyntaxError
+
+const z = 1;
+// const z = 2; // ❌ SyntaxError
+Example 3 – Reassignment
+
+var a = 5;
+a = 10; // ✅
+
+let b = 5;
+b = 10; // ✅
+
+const c = 5;
+// c = 10; // ❌ TypeError
+3. Hoisting
+Hoisting = JavaScript moves variable and function declarations to the top of their scope before execution.
+But only declarations are hoisted, not initializations.
+
+var Hoisting Example
+
+console.log(a); // undefined (declaration hoisted, value is undefined)
+var a = 10;
+console.log(a); // 10
+let & const Hoisting Example
+
+console.log(b); // ❌ ReferenceError (in Temporal Dead Zone)
+let b = 20;
+
+console.log(c); // ❌ ReferenceError (in Temporal Dead Zone)
+const c = 30;
+Temporal Dead Zone (TDZ) = Time between variable hoisting and initialization when the variable exists but cannot be accessed.
+
+    Function Hoisting
+
+    greet(); // ✅ Works (full function is hoisted)
+    function greet() {
+        console.log("Hello");
+    }
+
+    Function Expression Hoisting
+
+    sayHi(); // ❌ TypeError (variable hoisted but not assigned yet)
+    var sayHi = function() {
+        console.log("Hi");
+    };
+    Here, sayHi is treated like a variable — only its name is hoisted, not the function body.
+
+✅ Quick Summary:
+
+    var → Function-scoped, can redeclare, initialized as undefined during hoisting.
+    let → Block-scoped, no redeclaration, TDZ applies.
+    const → Block-scoped, no redeclaration, must initialize at declaration, TDZ applies.
+    Function declarations are fully hoisted; function expressions behave like variables.
+
+
+    | Keyword | Hoisted? | Initialized in Creation Phase? | TDZ?  | Default Value Before Init |
+| ------- | -------- | ------------------------------ | ----- | ------------------------- |
+| `var`   | ✅ Yes    | ✅ Yes (`undefined`)            | ❌ No  | `undefined`               |
+| `let`   | ✅ Yes    | ❌ No                           | ✅ Yes | N/A (error if accessed)   |
+| `const` | ✅ Yes    | ❌ No                           | ✅ Yes | N/A (error if accessed)   |
+
+
+
+Key takeaway:
+
+All variables (var, let, const) are hoisted in terms of memory allocation,
+but only var gets an immediate default value (undefined) in the creation phase.
+
+let and const stay in the Temporal Dead Zone (TDZ) until execution reaches their declaration line.

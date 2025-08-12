@@ -1,0 +1,141 @@
+Hoisting Behavior
+1. var
+    Hoisted ✅ (moved to the top of the scope in memory)
+    Initialized with undefined immediately in the Creation Phase
+    Can be accessed before its actual line of code (but will give undefined until assigned).
+
+    console.log(a); // undefined ✅
+    var a = 10;
+    console.log(a); // 10
+
+2. let
+    Hoisted ✅ (the name is placed in memory during Creation Phase)
+    Not initialized immediately (stays in the Temporal Dead Zone until its line of code is executed)
+    Accessing before initialization → ReferenceError
+
+    console.log(b); // ❌ ReferenceError (TDZ)
+    let b = 20;
+    console.log(b); // 20
+
+3. const
+    Hoisted ✅ (same as let)
+    Not initialized until its declaration line is executed
+    Must be initialized at declaration — otherwise, SyntaxError
+    Accessing before initialization → ReferenceError (TDZ)
+
+    console.log(c); // ❌ ReferenceError (TDZ)
+    const c = 30;
+    console.log(c); // 30
+
+Hoisting Table Recap
+    Keyword	Hoisted?	Initialized in Creation Phase?	TDZ?	Default Value Before Init
+    var	✅ Yes	✅ Yes (undefined)	❌ No	undefined
+    let	✅ Yes	❌ No	✅ Yes	N/A (error if accessed)
+    const	✅ Yes	❌ No	✅ Yes	N/A (error if accessed)
+
+💡 Key takeaway:
+
+All variables (var, let, const) are hoisted in terms of memory allocation,
+but only var gets an immediate default value (undefined) in the creation phase.
+
+let and const stay in the Temporal Dead Zone (TDZ) until execution reaches their declaration line.
+
+If you want, I can make you a memory creation & execution phase diagram for var, let, and const so you can see exactly how JavaScript processes them step by step.
+Would you like me to do that?
+
+
+
+
+
+
+
+
+You said:
+Yes
+
+
+ChatGPT said:
+Alright Rahul, here’s a visual breakdown of what happens with
+var, let, and const during Hoisting — showing the Creation Phase and Execution Phase in the JavaScript engine.
+
+📌 Step 1: Code Example
+We’ll use this small snippet:
+
+js
+Copy
+Edit
+console.log(a);
+console.log(b);
+console.log(c);
+
+var a = 10;
+let b = 20;
+const c = 30;
+📌 Step 2: How the JS Engine Works
+JavaScript executes in two phases:
+
+Memory Creation Phase (also called Variable Environment setup)
+
+Execution Phase
+
+🛠 Memory Creation Phase
+When the JS engine scans the code before running it:
+
+Variable	Action in Memory Creation Phase
+a (var)	Hoisted & initialized to undefined immediately
+b (let)	Hoisted but not initialized → stays in TDZ
+c (const)	Hoisted but not initialized → stays in TDZ
+Functions	Entire function body is hoisted and ready
+
+📍 Visual Diagram – Memory Creation
+
+javascript
+Copy
+Edit
+Memory:
+a → undefined      ✅ (var)
+b → <uninitialized> 🔒 TDZ (let)
+c → <uninitialized> 🔒 TDZ (const)
+🚀 Execution Phase
+Now JS runs the code line-by-line:
+
+console.log(a);
+
+a exists, value is undefined → prints undefined.
+
+console.log(b);
+
+b is still in TDZ (not initialized yet) → ReferenceError.
+
+(If execution didn’t stop at step 2…)
+
+console.log(c); would also throw ReferenceError (still in TDZ).
+
+var a = 10;
+
+Assigns 10 to a (overwrites undefined).
+
+let b = 20;
+
+Now b is initialized with 20 → TDZ ends for b.
+
+const c = 30;
+
+Now c is initialized with 30 → TDZ ends for c.
+
+📍 Visual Diagram – After Execution
+
+makefile
+Copy
+Edit
+Memory:
+a → 10
+b → 20
+c → 30
+💡 Final Summary Table
+Feature	var	let	const
+Hoisted	✅ Yes	✅ Yes	✅ Yes
+Init in Memory Phase	✅ undefined	❌ (TDZ)	❌ (TDZ)
+TDZ Applies?	❌ No	✅ Yes	✅ Yes
+Redeclaration	✅ Yes	❌ No	❌ No
+Reassignment	✅ Yes	✅ Yes	❌ No (must init at declaration)

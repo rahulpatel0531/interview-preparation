@@ -137,7 +137,7 @@ What is child proccesses in nodejs?
 
 
 9) What is Closure.
-	A closure is a function that remembers its outer scope even after the outer function has finished executing.
+	A closure is a function that "remembers" the variables from its lexical scope (the environment where it was created), even after that outer function has finished executing
 
 	In technical terms:
 	A closure is created when a function is defined inside another function, and the inner function accesses variables from the outer function’s scope, even after the outer function is returned or finished.
@@ -157,8 +157,7 @@ What is child proccesses in nodejs?
 	counter(); // Count: 1
 	counter(); // Count: 2
 
-
-	A closure is the combination of a function and the lexical environment within which the function was declared. it is an inner function that has access to outer functions variables, and global variables, and also access own scope variables.
+	A closure is the combination of a function and its lexical environment. It allows an inner function to access variables from its outer function, even after the outer function has returned.
 
 	function welcome (name){
 
@@ -173,7 +172,7 @@ What is child proccesses in nodejs?
 	myfunction('Hello');
 
 
-10) What Does "Single-Threaded" Mean?
+10) What Does "Single-Thcounterreaded" Mean?
 	Single-Threaded means the language can execute only one instruction at a time (which means that it can only execute one instruction at a time). This differs from multi-threaded programming languages that run multiple instructions at once. 
 
 		Q. Definition of a Thread
@@ -534,7 +533,10 @@ setImmediate() runs in the check phase  after I/O operations and timers have bee
 Note: process.nextTick() runs before setImmediate() because microtasks have higher priority than macrotasks.
 
 
-setTimeout schedules a callback after specified delay whereas setImmediate execute immediately after I/O opeation. 
+setTimeout schedules a callback after specified delay whereas setImmediate execute immediately after I/O opeation.
+
+
+Temporal Dead Zone (TDZ) = Time between variable hoisting and initialization when the variable exists but cannot be accessed.
 
 
 

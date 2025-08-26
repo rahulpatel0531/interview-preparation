@@ -23,3 +23,43 @@
 // For example, when an asynchronous task like a file read or setTimeout is triggered, the event loop ensures the callback is executed after the task is completed — without blocking the main thread.
 
 // This is what allows Node.js to handle many concurrent operations efficiently even though it's single-threaded.
+
+
+
+
+
+
+What is hosting in javascript
+what is closure with example
+
+what is rate limiting in nodejs
+
+git stash command kya kam krti he
+git rebase command kya kam krti he
+
+what is index in sql 
+
+what is aggregation in mongoDb
+
+console.log(typeof null)
+console.log(typeof [])
+console.log("5" + 2)
+console.log( "5" * 2)
+console.log( 3>2>1)
+console.log(1<2<3)
+
+
+// Output kya hoga
+for (var index = 1; index <5; index++) {
+  setTimeout(() => {
+    console.log('var: ', i)
+  }, index * 1000);
+}
+
+// Output kya hoga
+for (let index = 1; index <5; index++) {
+  setTimeout(() => {
+    console.log('var: ', i)
+  }, index * 1000);
+}
+
